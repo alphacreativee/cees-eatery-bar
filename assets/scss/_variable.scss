@@ -2,3 +2,9 @@
   --color-black: #000;
   --color-white: #fff;
 }
+.color-black {
+  color: var(--color-black);
+}
+.color-white {
+  color: var(--color-white);
+}
