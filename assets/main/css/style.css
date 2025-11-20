@@ -257,6 +257,26 @@ body {
 .header-cta-item.call-now {
   background-color: var(--color-sec-2);
 }
+.header-cta-item.book-now {
+  background-color: var(--color-sec-1);
+}
+
+#cta-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: none;
+}
+@media (max-width: 991px) {
+  #cta-mobile {
+    display: block;
+  }
+}
+#cta-mobile .header-cta-item {
+  padding: 8px 0;
+}
 
 .footer-container {
   padding-bottom: 24px;

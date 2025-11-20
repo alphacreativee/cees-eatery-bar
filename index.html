@@ -73,6 +73,14 @@
     </script>
     <header id="header"></header>
     <!-- end header -->
+    <script>
+      fetch("./components/cta-mobile.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("cta-mobile").innerHTML = data;
+        });
+    </script>
+    <div id="cta-mobile"></div>
     <main>
       <section class="banner">
         <div class="container-fluid p-0">
