@@ -1,0 +1,27 @@
+.team {
+  margin-bottom: 64px;
+  &-content {
+    background-color: var(--color-sec-1);
+    padding: 64px 0 164px;
+  }
+  &-title {
+    margin-bottom: 18px;
+  }
+  &-description {
+    .br {
+      height: 18px;
+    }
+  }
+  &-image {
+    margin-top: -100px;
+    .image {
+      width: 100%;
+      aspect-ratio: 1192 / 570;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

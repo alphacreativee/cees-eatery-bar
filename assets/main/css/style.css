@@ -369,3 +369,29 @@ body {
   height: 100%;
   gap: 24px;
 }
+
+.team {
+  margin-bottom: 64px;
+}
+.team-content {
+  background-color: var(--color-sec-1);
+  padding: 64px 0 164px;
+}
+.team-title {
+  margin-bottom: 18px;
+}
+.team-description .br {
+  height: 18px;
+}
+.team-image {
+  margin-top: -100px;
+}
+.team-image .image {
+  width: 100%;
+  aspect-ratio: 1192/570;
+}
+.team-image .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
