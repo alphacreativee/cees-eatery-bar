@@ -1,0 +1,30 @@
+.footer {
+  &-container {
+    padding-bottom: 24px;
+  }
+  &-top {
+    margin-bottom: 40px;
+  }
+  &-main {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    &-title {
+      margin-bottom: 4px;
+    }
+    &-list {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        li {
+          & > * {
+            display: flex;
+            gap: 4px;
+          }
+        }
+      }
+    }
+  }
+}

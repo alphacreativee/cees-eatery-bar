@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-Bold.eot');
+    src: url('Spectral-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-Bold.woff2') format('woff2'),
+        url('Spectral-Bold.woff') format('woff'),
+        url('Spectral-Bold.ttf') format('truetype'),
+        url('Spectral-Bold.svg#Spectral-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-ExtraBold.eot');
+    src: url('Spectral-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-ExtraBold.woff2') format('woff2'),
+        url('Spectral-ExtraBold.woff') format('woff'),
+        url('Spectral-ExtraBold.ttf') format('truetype'),
+        url('Spectral-ExtraBold.svg#Spectral-ExtraBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-Light.eot');
+    src: url('Spectral-Light.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-Light.woff2') format('woff2'),
+        url('Spectral-Light.woff') format('woff'),
+        url('Spectral-Light.ttf') format('truetype'),
+        url('Spectral-Light.svg#Spectral-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-Medium.eot');
+    src: url('Spectral-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-Medium.woff2') format('woff2'),
+        url('Spectral-Medium.woff') format('woff'),
+        url('Spectral-Medium.ttf') format('truetype'),
+        url('Spectral-Medium.svg#Spectral-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-Regular.eot');
+    src: url('Spectral-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-Regular.woff2') format('woff2'),
+        url('Spectral-Regular.woff') format('woff'),
+        url('Spectral-Regular.ttf') format('truetype'),
+        url('Spectral-Regular.svg#Spectral-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spectral';
+    src: url('Spectral-SemiBold.eot');
+    src: url('Spectral-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Spectral-SemiBold.woff2') format('woff2'),
+        url('Spectral-SemiBold.woff') format('woff'),
+        url('Spectral-SemiBold.ttf') format('truetype'),
+        url('Spectral-SemiBold.svg#Spectral-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

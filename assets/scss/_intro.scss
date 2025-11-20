@@ -1,0 +1,33 @@
+.intro {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
+  &-content {
+    background-color: var(--color-sec-1);
+    padding: 64px 48px;
+    .br {
+      height: 24px;
+    }
+  }
+  &-title {
+    margin-bottom: 18px;
+  }
+  &-image {
+    width: 100%;
+    aspect-ratio: 1192 / 570;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &.two-description {
+    margin-top: 0;
+    margin-bottom: 34px;
+    .intro-content {
+      padding: 30px 48px;
+      background-color: transparent;
+    }
+  }
+}
