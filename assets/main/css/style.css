@@ -375,7 +375,10 @@ body {
 }
 .team-content {
   background-color: var(--color-sec-1);
-  padding: 64px 0 164px;
+  padding: 64px 0px 164px;
+}
+.team-content-wrapper {
+  padding: 0 48px;
 }
 .team-title {
   margin-bottom: 18px;

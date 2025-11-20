@@ -2,7 +2,10 @@
   margin-bottom: 64px;
   &-content {
     background-color: var(--color-sec-1);
-    padding: 64px 0 164px;
+    padding: 64px 0px 164px;
+    &-wrapper {
+      padding: 0 48px;
+    }
   }
   &-title {
     margin-bottom: 18px;
