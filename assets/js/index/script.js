@@ -11,6 +11,7 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 // end lenis
 function headerMobile() {
+  if (window.innerWidth > 991) return;
   const btnHambuger = document.getElementById("btn-hambuger");
   const headerMenuMobile = document.querySelector(".header-menu-mobile");
   const menuItems = document.querySelectorAll(".menu-item-has-children");
