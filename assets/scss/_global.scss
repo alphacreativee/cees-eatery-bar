@@ -35,6 +35,12 @@
     background-color: var(--color-black-op);
     color: var(--color-white);
   }
+  &.btn-secondary {
+    &:hover {
+      color: var(--color-black);
+      background-color: var(--color-black-op);
+    }
+  }
 }
 .btn-arrow {
   width: 34px;
