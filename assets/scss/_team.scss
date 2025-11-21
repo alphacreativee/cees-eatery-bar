@@ -5,6 +5,9 @@
     padding: 64px 0px 164px;
     &-wrapper {
       padding: 0 48px;
+      @media (max-width: 991px) {
+        padding: 0 24px;
+      }
     }
   }
   &-title {

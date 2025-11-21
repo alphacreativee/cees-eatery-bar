@@ -6,6 +6,9 @@
   &-content {
     background-color: var(--color-sec-1);
     padding: 64px 48px;
+    @media (max-width: 991px) {
+      padding: 48px 24px 24px;
+    }
     .br {
       height: 24px;
     }
@@ -28,6 +31,9 @@
     .intro-content {
       padding: 30px 48px;
       background-color: transparent;
+      @media (max-width: 991px) {
+        padding: 30px 32px;
+      }
     }
   }
 }

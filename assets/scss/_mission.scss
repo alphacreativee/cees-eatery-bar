@@ -5,6 +5,11 @@
       .mission-box {
         padding-right: 48px;
         padding-left: calc(calc(1 / 12) * 100% + 60px);
+        @media (max-width: 991px) {
+          padding-left: 32px;
+          padding-right: 32px;
+          padding-bottom: 32px;
+        }
       }
     }
     &:last-child {
@@ -30,5 +35,10 @@
     justify-content: center;
     height: 100%;
     gap: 24px;
+    @media (max-width: 991px) {
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-bottom: 32px;
+    }
   }
 }
