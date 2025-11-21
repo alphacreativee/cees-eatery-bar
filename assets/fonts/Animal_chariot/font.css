@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Animal Chariot';
+    src: url('AnimalChariot.eot');
+    src: url('AnimalChariot.eot?#iefix') format('embedded-opentype'),
+        url('AnimalChariot.woff2') format('woff2'),
+        url('AnimalChariot.woff') format('woff'),
+        url('AnimalChariot.ttf') format('truetype'),
+        url('AnimalChariot.svg#AnimalChariot') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
