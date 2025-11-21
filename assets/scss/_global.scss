@@ -3,6 +3,7 @@
     display: inline-block;
     position: relative;
     &:hover {
+      color: var(--color-white);
       &::before {
         width: 100%;
       }

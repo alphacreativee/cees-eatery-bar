@@ -52,18 +52,31 @@
               normalizedLinkPath = normalizedLinkPath.substring(1);
             }
 
-            // For GitHub Pages, get the last segment of the path
-            const currentSegment =
-              normalizedCurrentPath.split("/").pop() || "/";
-            const linkSegment = normalizedLinkPath.split("/").pop() || "/";
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
 
-            // Check if paths match
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
             const isMatch =
               normalizedLinkPath === normalizedCurrentPath || // Exact match
               currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
               (currentPath.endsWith(normalizedLinkPath) &&
-                normalizedLinkPath !== "/") || // Ends with
-              (currentPath === "/" && (linkPath === "/" || linkPath === "./")); // Home page
+                normalizedLinkPath !== "/");
 
             if (isMatch) {
               link.classList.add("active");

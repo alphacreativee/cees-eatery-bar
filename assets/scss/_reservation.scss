@@ -1,0 +1,9 @@
+.reservation {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+  &-wrapper {
+    padding: 40px;
+    background-color: var(--color-sec-1);
+  }
+}

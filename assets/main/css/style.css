@@ -19,7 +19,7 @@
 
 .h1-font {
   font-family: var(--font-heading);
-  font-size: 48px;
+  font-size: 56px;
   line-height: 64px;
   font-weight: 400;
 }
@@ -159,6 +159,9 @@ body {
   .hover-line {
     display: inline-block;
     position: relative;
+  }
+  .hover-line:hover {
+    color: var(--color-white);
   }
   .hover-line:hover::before {
     width: 100%;
@@ -744,4 +747,14 @@ body {
 }
 .event-btn-group .read-more {
   background-color: var(--color-black-op);
+}
+
+.reservation {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+}
+.reservation-wrapper {
+  padding: 40px;
+  background-color: var(--color-sec-1);
 }
