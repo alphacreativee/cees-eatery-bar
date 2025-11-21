@@ -51,4 +51,7 @@
   max-width: 1440px;
   padding: 0 125px;
   margin: 0 auto;
+  @media (max-width: 991px) {
+    padding: 0 15px;
+  }
 }

@@ -10,6 +10,9 @@
     grid-template-columns: 7fr 5fr;
     gap: 30px;
     margin-bottom: 40px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
     &-title {
       margin-bottom: 4px;
     }

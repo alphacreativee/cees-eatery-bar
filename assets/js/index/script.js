@@ -10,92 +10,65 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 // end lenis
-function customDropdown() {
-  const dropdowns = document.querySelectorAll(
-    ".dropdown-custom, .dropdown-custom-select"
-  );
+function headerMobile() {
+  const btnHambuger = document.getElementById("btn-hambuger");
+  const headerMenuMobile = document.querySelector(".header-menu-mobile");
+  const menuItems = document.querySelectorAll(".menu-item-has-children");
+  const menuOverlay = document.querySelector(".menu-mobile-overlay");
+  btnHambuger.addEventListener("click", function () {
+    headerMenuMobile.classList.toggle("active");
+  });
+  menuOverlay.addEventListener("click", function () {
+    headerMenuMobile.classList.remove("active");
+  });
+  menuItems.forEach((item) => {
+    const submenu = item.querySelector(".sub-menu");
 
-  dropdowns.forEach((dropdown) => {
-    const btnDropdown = dropdown.querySelector(".dropdown-custom-btn");
-    const dropdownMenu = dropdown.querySelector(".dropdown-custom-menu");
-    const dropdownItems = dropdown.querySelectorAll(".dropdown-custom-item");
-    const valueSelect = dropdown.querySelector(".value-select");
-    const displayText = dropdown.querySelector(".dropdown-custom-text");
+    if (!item.classList.contains("active")) {
+      submenu.style.height = "0px";
+    }
 
-    // Kiểm tra loại dropdown
-    const isSelectType = dropdown.classList.contains("dropdown-custom-select");
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    // Toggle dropdown on button click
-    btnDropdown.addEventListener("click", function (e) {
-      e.stopPropagation();
-      closeAllDropdowns(dropdown);
-      dropdownMenu.classList.toggle("dropdown--active");
-      btnDropdown.classList.toggle("--active");
-    });
+      const isActive = this.classList.contains("active");
 
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function () {
-      closeAllDropdowns();
-    });
-
-    // Handle item selection
-    dropdownItems.forEach((item) => {
-      item.addEventListener("click", function (e) {
-        e.stopPropagation();
-
-        if (isSelectType) {
-          // Logic cho dropdown-custom-select
-          const optionText = item.textContent;
-          displayText.textContent = optionText;
-          dropdown.classList.add("selected");
-        } else {
-          // Logic cho dropdown-custom
-          const currentImgEl = valueSelect.querySelector("img");
-          const currentImg = currentImgEl ? currentImgEl.src : "";
-          const currentText = valueSelect.querySelector("span").textContent;
-          const clickedHtml = item.innerHTML;
-
-          valueSelect.innerHTML = clickedHtml;
-
-          const isSelectTime = currentText.trim() === "Time";
-
-          if (!isSelectTime) {
-            if (currentImg) {
-              item.innerHTML = `<span>${currentText}</span><img src="${currentImg}" alt="" />`;
-            } else {
-              item.innerHTML = `<span>${currentText}</span>`;
-            }
-          }
+      // Đóng tất cả menu khác trước
+      menuItems.forEach((otherItem) => {
+        if (otherItem !== this) {
+          otherItem.classList.remove("active");
+          const otherSubmenu = otherItem.querySelector(".sub-menu");
+          otherSubmenu.style.height = otherSubmenu.scrollHeight + "px";
+          otherSubmenu.offsetHeight;
+          otherSubmenu.style.height = "0px";
         }
-
-        closeAllDropdowns();
       });
-    });
 
-    // Close dropdown on scroll
-    window.addEventListener("scroll", function () {
-      if (dropdownMenu.closest(".header-lang")) {
-        dropdownMenu.classList.remove("dropdown--active");
-        btnDropdown.classList.remove("--active");
+      this.classList.toggle("active");
+
+      if (!isActive) {
+        // Mở menu hiện tại
+        submenu.style.height = submenu.scrollHeight + "px";
+
+        submenu.addEventListener("transitionend", function handler() {
+          if (item.classList.contains("active")) {
+            submenu.style.height = "auto";
+          }
+          submenu.removeEventListener("transitionend", handler);
+        });
+      } else {
+        // Đóng menu hiện tại
+        submenu.style.height = submenu.scrollHeight + "px";
+        submenu.offsetHeight;
+        submenu.style.height = "0px";
       }
     });
   });
-
-  function closeAllDropdowns(exception) {
-    dropdowns.forEach((dropdown) => {
-      const menu = dropdown.querySelector(".dropdown-custom-menu");
-      const btn = dropdown.querySelector(".dropdown-custom-btn");
-
-      if (!exception || dropdown !== exception) {
-        menu.classList.remove("dropdown--active");
-        btn.classList.remove("--active");
-      }
-    });
-  }
 }
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
-  customDropdown();
+  headerMobile();
 };
 preloadImages("img").then(() => {
   init();
