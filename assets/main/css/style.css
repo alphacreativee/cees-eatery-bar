@@ -31,6 +31,13 @@
   font-weight: 400;
 }
 
+.h3-font {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
 .b1-font {
   font-family: var(--font-body);
   font-size: 15px;
@@ -43,6 +50,13 @@
   font-size: 15px;
   line-height: 24px;
   font-weight: bold;
+}
+
+.btn-2-font {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  font-family: var(--font-body);
 }
 
 .color-black {
@@ -167,6 +181,29 @@ body {
   width: 100%;
   height: 2px;
   background-color: var(--color-white);
+}
+
+.btn-global {
+  padding: 8px 16px;
+  background-color: var(--color-black);
+  transition: all 0.3s ease-in-out;
+}
+.btn-global:hover {
+  background-color: var(--color-black-op);
+  color: var(--color-white);
+}
+
+.btn-arrow {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-black-op);
+  margin: 0;
+  top: 50%;
+  transform: translateY(-24px);
+}
+.btn-arrow::after {
+  content: unset;
+  font-size: 0;
 }
 
 #header {
@@ -465,7 +502,7 @@ body {
   margin-top: -100px;
   position: relative;
   z-index: 2;
-  margin-bottom: 30px;
+  margin-bottom: 96px;
 }
 .intro-content {
   background-color: var(--color-sec-1);
@@ -493,10 +530,10 @@ body {
 }
 .intro.two-description {
   margin-top: 0;
-  margin-bottom: 34px;
+  margin-bottom: 96px;
 }
 .intro.two-description .intro-content {
-  padding: 30px 48px;
+  padding: 96px 48px 30px;
   background-color: transparent;
 }
 @media (max-width: 991px) {
@@ -504,9 +541,32 @@ body {
     padding: 30px 32px;
   }
 }
+.intro.two-description .intro-image {
+  margin-bottom: 30px;
+}
+.intro.two-column .intro-container {
+  padding: 30px;
+  background-color: var(--color-sec-1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.intro.two-column .intro-image {
+  width: 100%;
+  aspect-ratio: 550/440;
+}
+.intro.two-column .intro-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro.two-column .intro-button {
+  margin-top: 30px;
+}
 
 .mission-vision-item {
-  margin-bottom: 30px;
+  margin-bottom: 96px;
 }
 .mission-vision-item:nth-child(even) .mission-box {
   padding-right: 48px;
@@ -549,11 +609,11 @@ body {
 }
 
 .team {
-  margin-bottom: 64px;
+  margin-bottom: 96px;
 }
 .team-content {
   background-color: var(--color-sec-1);
-  padding: 64px 0px 164px;
+  padding: 96px 0px 160px;
 }
 .team-content-wrapper {
   padding: 0 48px;
@@ -580,4 +640,55 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.offer {
+  margin-bottom: 96px;
+}
+.offer-title {
+  margin-bottom: 96px;
+}
+.offer-list {
+  position: relative;
+}
+.offer-list .swiper-slide {
+  height: auto;
+}
+.offer-list .swiper-arrows .swiper-button-prev {
+  left: -64px;
+}
+.offer-list .swiper-arrows .swiper-button-next {
+  right: -64px;
+}
+.offer-item {
+  height: 100%;
+  background-color: var(--color-sec-1);
+}
+.offer-item-top {
+  position: relative;
+}
+.offer-item-image {
+  width: 100%;
+  aspect-ratio: 378/250;
+  height: 250px;
+}
+.offer-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.offer-item-date {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+}
+.offer-item-content {
+  padding: 24px;
+}
+.offer-item-content h4 {
+  margin-bottom: 16px;
+}
+.offer-item-content .description {
+  margin-bottom: 24px;
 }

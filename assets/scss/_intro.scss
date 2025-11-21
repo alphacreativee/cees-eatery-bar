@@ -2,7 +2,7 @@
   margin-top: -100px;
   position: relative;
   z-index: 2;
-  margin-bottom: 30px;
+  margin-bottom: 96px;
   &-content {
     background-color: var(--color-sec-1);
     padding: 64px 48px;
@@ -27,13 +27,38 @@
   }
   &.two-description {
     margin-top: 0;
-    margin-bottom: 34px;
+    margin-bottom: 96px;
     .intro-content {
-      padding: 30px 48px;
+      padding: 96px 48px 30px;
       background-color: transparent;
       @media (max-width: 991px) {
         padding: 30px 32px;
       }
+    }
+    .intro-image {
+      margin-bottom: 30px;
+    }
+  }
+  &.two-column {
+    .intro-container {
+      padding: 30px;
+      background-color: var(--color-sec-1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .intro-image {
+      width: 100%;
+      aspect-ratio: 550 / 440;
+    }
+    .intro-content {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .intro-button {
+      margin-top: 30px;
     }
   }
 }

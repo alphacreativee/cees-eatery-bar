@@ -66,10 +66,21 @@ function headerMobile() {
     });
   });
 }
-
+function swiperOffer() {
+  if (!document.querySelector(".swiper-offer")) return;
+  var swiper = new Swiper(".swiper-offer", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".offer-list .swiper-button-next",
+      prevEl: ".offer-list .swiper-button-prev",
+    },
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
+  swiperOffer();
 };
 preloadImages("img").then(() => {
   init();

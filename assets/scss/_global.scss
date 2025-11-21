@@ -27,3 +27,24 @@
     background-color: var(--color-white);
   }
 }
+.btn-global {
+  padding: 8px 16px;
+  background-color: var(--color-black);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--color-black-op);
+    color: var(--color-white);
+  }
+}
+.btn-arrow {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-black-op);
+  margin: 0;
+  top: 50%;
+  transform: translateY(-24px);
+  &::after {
+    content: unset;
+    font-size: 0;
+  }
+}

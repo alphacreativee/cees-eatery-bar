@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/Mairo/font.css" />
+    <link rel="stylesheet" href="./assets/fonts/Spectral/font.css" />
     <link rel="stylesheet" href="./assets/main/css/style.min.css" />
     <!-- end link custom css page -->
     <!-- scrollRestoration -->
@@ -71,8 +73,194 @@
     </script>
     <header id="header"></header>
     <!-- end header -->
+    <script>
+      fetch("./components/cta-mobile.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("cta-mobile").innerHTML = data;
+        });
+    </script>
+    <div id="cta-mobile"></div>
     <main>
-      <h1>helo</h1>
+      <section class="banner">
+        <div class="container-fluid p-0">
+          <div class="banner-container">
+            <div class="banner-video d-none">
+              <video autoplay muted loop playinline preload="auto">
+                <source
+                  src="./assets/images/video-banner.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="banner-image">
+              <img src="./assets/images/banner.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="intro one-column">
+        <div class="container-max-w">
+          <div class="intro-container">
+            <div class="intro-content">
+              <h2 class="intro-title h1-font color-white">About Cee’s</h2>
+              <div class="intro-description b1-font color-white">
+                Cee's Eatery & Bar brings the vibrant essence of Latin American
+                cuisine to the heart of Ho Chi Minh City, with locations in
+                District 1 and a newly renovated spot in District 7. Since
+                opening in 2018, we’ve established ourselves as a top dining
+                destination, recognized by Asia’s 50 Best Discovery and honored
+                with Michelin Select in 2023 and Michelin Bib in 2024. Our
+                venues combine culinary excellence with a lively atmosphere,
+                where each dish and cocktail are crafted to captivate the
+                senses. At Sol Kitchen & Bar, we deeply value our customers and
+                their support, which has been vital to our success. Please join
+                us and experience the exceptional flavors and welcoming ambiance
+                at either of our two locations.
+              </div>
+            </div>
+            <div class="intro-image">
+              <img src="./assets/images/intro.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mission-vision">
+        <div class="container-max-w">
+          <div class="row g-0 mission-vision-item">
+            <div class="col-lg-6 mission-vision-paragraph">
+              <div class="mission-box">
+                <h2 class="h1-font color-white">Mission</h2>
+                <div class="description b1-font color-white">
+                  To be recognized as a distinguished industry leader in
+                  Vietnam’s Food & Beverage landscape — a brand that
+                  consistently sets new standards of excellence. We are
+                  committed to placing “unreasonable hospitality” at the heart
+                  of everything we do, ensuring every valued guest receives not
+                  only exceptional service, but also heartfelt, memorable
+                  experiences that go far beyond expectations.
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mission-vision-image">
+              <div class="image">
+                <img src="./assets/images/ms-2.webp" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="row g-0 flex-row-reverse mission-vision-item">
+            <div class="col-lg-6 mission-vision-paragraph">
+              <div class="mission-box">
+                <h2 class="h1-font color-white">Vision</h2>
+                <div class="description b1-font color-white">
+                  The vision is to become one of Vietnam’s leading trendsetters
+                  in the hospitality industry — a pioneering force that inspires
+                  innovation, professionalism, and excellence across the market.
+                  We are committed to creating meaningful career growth
+                  opportunities for our community, empowering individuals to
+                  develop long-term, fulfilling pathways in hospitality. At the
+                  same time, we aim to elevate service standards nationwide,
+                  shaping a more refined, customer-centric, and world-class
+                  service culture for Vietnam’s future.
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mission-vision-image">
+              <div class="image">
+                <img src="./assets/images/ms-1.webp" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="intro two-description">
+        <div class="container-max-w">
+          <div class="intro-container">
+            <div class="intro-content">
+              <h2 class="intro-title h1-font color-white">Our Cuisine</h2>
+              <div class="intro-description b1-font color-white">
+                At Cee's Eatery & Bar, our culinary inspiration is deeply rooted
+                in the diverse regions of Latin American. Our menu reflects the
+                rich tapestry of flavors that span this vibrant part of the
+                world. Drawing from the culinary traditions of different
+                countries, our chefs have brought their regional favorites to
+                life, creating a dining experience that is both authentic and
+                innovative.
+                <div class="br"></div>
+                We take immense pride in using only the highest quality
+                ingredients. Some of our signature dishes feature premium
+                selections like Iberico pork ribs, Wagyu beef for our sizzling
+                fajitas and carne asada, and handcrafted empanadas made fresh
+                in-house. Our seafood platters are made with the freshest
+                seafood, ensuring freshness in every bite. Just as important as
+                our quality meats is our commitment to sourcing local produce,
+                guaranteeing that every dish is as fresh and flavorful as
+                possible.
+              </div>
+            </div>
+            <div class="intro-image">
+              <img src="./assets/images/intro-3.webp" alt="" />
+            </div>
+            <div class="intro-content pt-0 pb-0">
+              <div class="intro-description b1-font color-white">
+                Our menu also highlights unique creations like the truffle
+                mushroom quesadilla and our soft-shell crab chicharron—dishes
+                that have quickly become fan favorites, blending rich, bold
+                flavors with inventive twists on Latin cuisine. At At Cee's
+                Eatery & Bar, our mission is to bring the authentic tastes of
+                Latin American to the heart of Ho Chi Minh City, offering a
+                culinary journey where every flavor tells a story, celebrating
+                the diversity and richness of this extraordinary region.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="team">
+        <div class="team-content">
+          <div class="container-max-w">
+            <div class="team-content-wrapper">
+              <h2 class="team-title h1-font color-white">Team</h2>
+              <div class="team-description b1-font color-white">
+                At the heart of Cee's Eatery & Bar is a dynamic team of culinary
+                experts who bring passion, experience, and creativity to our
+                kitchen. Leading the way is Adrian Chong, our Executive Chef and
+                owner. Originally from Malaysia, Adrian began his culinary
+                journey at the young age of 15. After honing his skills in
+                kitchens across Malaysia and Singapore, he seized the
+                opportunity to bring his vision to life in Ho Chi Minh City by
+                founding Sol Kitchen & Bar.
+                <div class="br"></div>
+                oining Adrian is Christian Corachea, a talented chef from the
+                Philippines who has made his mark in Ho Chi Minh City’s vibrant
+                culinary scene before finding his home at Cee's Eatery & Bar.
+                Christian’s deep understanding of flavors and dedication to
+                excellence make him an invaluable member of our team.
+                <div class="br"></div>
+                Rounding out our leadership trio is Ian Ortiz, hailing from
+                Mexico City. Ian’s culinary journey has taken him through the
+                kitchens of Mexico and Europe, enriching his expertise and
+                bringing a global perspective to our menu. His addition to our
+                team adds depth and authenticity to our Latin American- inspired
+                dishes.
+                <div class="br"></div>
+                Together, Adrian, Christian, and Ian lead our entire talented
+                culinary team with a shared commitment to creating exceptional
+                dining experiences. Their combined talents and unique
+                backgrounds ensure that every dish at Sol Kitchen & Bar is
+                crafted with care and innovation.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team-image">
+          <div class="container-max-w">
+            <div class="image">
+              <img src="./assets/images/team.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- layout -->
     <!-- footer -->
