@@ -417,8 +417,7 @@ body {
 .footer-main {
   display: grid;
   grid-template-columns: 7fr 5fr;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 40px 30px;
 }
 @media (max-width: 991px) {
   .footer-main {
