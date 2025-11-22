@@ -78,6 +78,7 @@ function swiperOffer() {
   });
 }
 function getDate() {
+  if (!document.querySelector("#date")) return;
   var picker = new Lightpick({ field: document.getElementById("date") });
 }
 function customDropdown() {
@@ -163,12 +164,61 @@ function customDropdown() {
     });
   }
 }
+function fieldSuggestion() {
+  // Normalize string: remove Vietnamese accents
+  function removeVietnameseTones(str) {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // remove diacritics
+      .replace(/đ/g, "d")
+      .replace(/Đ/g, "D");
+  }
+
+  // When input is focused
+  $(".field-suggestion input").on("focus", function () {
+    const $list = $(this).siblings(".field-suggestion__list");
+
+    $(".field-suggestion__list").addClass("hidden");
+
+    $list.removeClass("hidden");
+    filterList($list, ""); // show all items
+  });
+
+  $(".field-suggestion input").on("input", function () {
+    const value = removeVietnameseTones($(this).val().toLowerCase());
+    const $list = $(this).siblings(".field-suggestion__list");
+    filterList($list, value);
+    $list.removeClass("hidden");
+  });
+
+  $(".field-suggestion").on("click", "li", function () {
+    const text = $(this).text();
+    const $input = $(this).closest(".field-suggestion").find("input");
+    $input.val(text);
+    $(this).parent().addClass("hidden");
+  });
+
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".field-suggestion").length) {
+      $(".field-suggestion__list").addClass("hidden");
+    }
+  });
+
+  function filterList($list, value) {
+    $list.find("li").each(function () {
+      const text = $(this).text().toLowerCase();
+      const normalizedText = removeVietnameseTones(text);
+      $(this).toggle(normalizedText.includes(value));
+    });
+  }
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
   swiperOffer();
   getDate();
   customDropdown();
+  fieldSuggestion();
 };
 preloadImages("img").then(() => {
   init();
