@@ -104,4 +104,37 @@
       margin-top: 64px;
     }
   }
+  .dropdown-custom-btn {
+    height: 42px;
+    background-color: #fff;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dropdown-custom-menu {
+    position: absolute;
+    background-color: var(--color-black);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+
+    &.dropdown--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .dropdown-custom-item {
+    cursor: pointer;
+  }
 }
