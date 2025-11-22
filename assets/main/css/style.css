@@ -873,7 +873,7 @@ body {
 .reservation-form .form-row .input-wrapper select::placeholder {
   font-size: 15px;
   line-height: 24px;
-  color: rgba(21, 21, 21, 0.6);
+  color: var(--color-black);
   font-family: var(--font-body);
 }
 .reservation-form .form-row .input-wrapper select {
@@ -959,7 +959,6 @@ body {
 .reservation .dropdown-custom-item {
   cursor: pointer;
 }
-
 .menu {
   padding-top: 96px;
 }

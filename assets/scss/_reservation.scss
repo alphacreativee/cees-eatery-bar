@@ -45,7 +45,8 @@
           &::placeholder {
             font-size: 15px;
             line-height: 24px;
-            color: rgba(21, 21, 21, 0.6);
+            // color: rgba(21, 21, 21, 0.6);
+            color: var(--color-black);
             font-family: var(--font-body);
           }
         }
@@ -136,5 +137,7 @@
   }
   .dropdown-custom-item {
     cursor: pointer;
+  }
+  .dropdown-custom-text {
   }
 }
