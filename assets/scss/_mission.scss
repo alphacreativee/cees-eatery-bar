@@ -41,4 +41,35 @@
       padding-bottom: 32px;
     }
   }
+  &.private-dining-sec {
+    padding-top: 96px;
+    .mission-box {
+      padding-right: 48px;
+      padding-left: calc(calc(1 / 12) * 100% + 60px);
+      @media (max-width: 991px) {
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-bottom: 32px;
+      }
+      .btn-global {
+        display: inline-block;
+        width: max-content;
+        background-color: var(--color-black-op);
+        margin-top: 40px;
+      }
+    }
+    .mission-vision-item {
+      &:nth-child(even) {
+        .mission-box {
+          padding-left: 48px;
+          padding-right: calc(calc(1 / 12) * 100% + 60px);
+          @media (max-width: 991px) {
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-bottom: 32px;
+          }
+        }
+      }
+    }
+  }
 }

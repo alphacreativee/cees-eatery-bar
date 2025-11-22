@@ -619,6 +619,37 @@ body {
     padding-bottom: 32px;
   }
 }
+.mission-vision.private-dining-sec {
+  padding-top: 96px;
+}
+.mission-vision.private-dining-sec .mission-box {
+  padding-right: 48px;
+  padding-left: calc(8.3333333333% + 60px);
+}
+@media (max-width: 991px) {
+  .mission-vision.private-dining-sec .mission-box {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+  }
+}
+.mission-vision.private-dining-sec .mission-box .btn-global {
+  display: inline-block;
+  width: max-content;
+  background-color: var(--color-black-op);
+  margin-top: 40px;
+}
+.mission-vision.private-dining-sec .mission-vision-item:nth-child(even) .mission-box {
+  padding-left: 48px;
+  padding-right: calc(8.3333333333% + 60px);
+}
+@media (max-width: 991px) {
+  .mission-vision.private-dining-sec .mission-vision-item:nth-child(even) .mission-box {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+  }
+}
 
 .team-content {
   background-color: var(--color-sec-1);
