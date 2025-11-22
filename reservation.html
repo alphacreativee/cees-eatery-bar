@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/libs/lenis.css" />
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
     <link rel="stylesheet" href="./assets/fonts/Animal_chariot/font.css" />
@@ -143,7 +144,7 @@
                     >
                   </li>
                   <li>
-                    <div class="phone b1-font color-white">Hotline</div>
+                    <div class="phone b1-font color-white">Hotline:</div>
                     <a
                       href="tel:+0898999454"
                       class="btn-font color-white hover-line"
@@ -151,6 +152,154 @@
                     >
                   </li>
                 </ul>
+              </div>
+            </div>
+            <div class="reservation-form">
+              <form action="">
+                <div class="form-row">
+                  <div class="input-wrapper">
+                    <label
+                      for="fullname"
+                      class="btn-2-font text-uppercase color-white"
+                      >Full name*</label
+                    >
+                    <input type="text" name="fullname" autocomplete="off" />
+                  </div>
+                  <div class="input-wrapper">
+                    <label
+                      for="date"
+                      class="btn-2-font text-uppercase color-white"
+                      >Date*</label
+                    >
+                    <input
+                      type="text"
+                      name="date"
+                      id="date"
+                      placeholder="dd/mm/yyyy"
+                    />
+                  </div>
+                  <div class="input-wrapper">
+                    <label
+                      for="time"
+                      class="btn-2-font text-uppercase color-white"
+                      >Time*</label
+                    >
+                    <select name="" id="">
+                      <option value="---">---</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-wrapper">
+                    <label
+                      for="email"
+                      class="btn-2-font text-uppercase color-white"
+                      >Email*</label
+                    >
+                    <input type="email" name="email" autocomplete="off" />
+                  </div>
+                  <div class="input-wrapper">
+                    <label
+                      for="phone"
+                      class="btn-2-font text-uppercase color-white"
+                      >Phone number*</label
+                    >
+                    <input
+                      type="tel"
+                      name="phone"
+                      autocomplete="off"
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                      required
+                    />
+                  </div>
+                  <div class="input-wrapper">
+                    <label
+                      for="guest"
+                      class="btn-2-font text-uppercase color-white"
+                      >No.of guest*</label
+                    >
+                    <input type="text" name="guest" autocomplete="off" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="input-wrapper">
+                    <label
+                      for="time"
+                      class="btn-2-font text-uppercase color-white"
+                      >Location</label
+                    >
+                    <select name="" id="">
+                      <option value="--Please choose an option--">
+                        --Please choose an option--
+                      </option>
+                      <option value="D1">D1</option>
+                    </select>
+                  </div>
+                  <div class="input-wrapper w-grid">
+                    <label
+                      for="time"
+                      class="btn-2-font text-uppercase color-white"
+                      >Type of event</label
+                    >
+                    <select name="" id="">
+                      <option value="None">None</option>
+                      <option value="Birthdays">Birthdays</option>
+                      <option value="Private Event">Private Event</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-note">
+                  <label
+                    for="time"
+                    class="btn-2-font text-uppercase color-white"
+                    >note</label
+                  >
+                  <textarea name="" id="" rows="4"></textarea>
+                </div>
+                <button class="btn-2-font color-white text-uppercase">
+                  SUBMIT
+                </button>
+              </form>
+            </div>
+            <div class="reservation-note">
+              <ul>
+                <li>
+                  <p class="b1-font color-white">
+                    Please fill out the form for a table request and one of our
+                    host will contact you promptly to confirm availability.
+                  </p>
+                </li>
+                <li>
+                  <p class="b1-font color-white">
+                    We kindly request reservations are made 24 hours in advance.
+                    Otherwise, please call us directly.
+                  </p>
+                </li>
+                <li>
+                  <p class="b1-font color-white">
+                    Submission of form does not guarantee a table. We will
+                    contact you via email or phone call to confirm your
+                    reservation.
+                  </p>
+                </li>
+                <li>
+                  <p class="b1-font color-white">
+                    Reservations can only be held for 20 minutes, please contact
+                    us if you are delayed, and we will do our best to
+                    accommodate your arrival.
+                  </p>
+                </li>
+              </ul>
+              <p class="b1-font color-white see-you-soon">See you soon!</p>
+              <div class="logo">
+                <img src="./assets/images/icon/logo-note.svg" alt="" />
               </div>
             </div>
           </div>
@@ -177,6 +326,8 @@
     <script src="./assets/libs/SplitText.min.js"></script>
     <script src="./assets/libs/bootstrap.bundle.min.js"></script>
     <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
     <script src="./assets/libs/swiper-bundle.min.js"></script>
     <!-- import custom js -->
     <script type="module" src="./assets/main/js/script.min.js"></script>

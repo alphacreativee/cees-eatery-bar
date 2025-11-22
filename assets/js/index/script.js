@@ -77,10 +77,14 @@ function swiperOffer() {
     },
   });
 }
+function getDate() {
+  var picker = new Lightpick({ field: document.getElementById("date") });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
   swiperOffer();
+  getDate();
 };
 preloadImages("img").then(() => {
   init();

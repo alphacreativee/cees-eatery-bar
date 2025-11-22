@@ -1,5 +1,8 @@
 .offer {
   margin-bottom: 96px;
+  &.other-offers {
+    margin-bottom: 0;
+  }
   &-title {
     margin-bottom: 96px;
   }
@@ -54,6 +57,38 @@
       }
       .description {
         margin-bottom: 24px;
+      }
+    }
+  }
+}
+.offer-detail {
+  margin-top: -100px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 96px;
+  &-box {
+    background-color: var(--color-sec-1);
+    padding: 40px;
+    .date {
+      margin-bottom: 16px;
+    }
+    .the-content {
+      p {
+        font-size: 15px;
+        line-height: 24px;
+        color: #fff;
+        margin-top: 24px;
+        font-family: var(--font-body);
+      }
+      figure {
+        margin: 24px 0;
+        aspect-ratio: 1112 / 530;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }

@@ -27,6 +27,9 @@
     height: 2px;
     background-color: var(--color-white);
   }
+  .title-text {
+    white-space: nowrap;
+  }
 }
 .btn-global {
   padding: 8px 16px;
