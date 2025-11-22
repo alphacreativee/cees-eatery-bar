@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <!-- import favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/Animal_chariot/font.css" />
+    <link rel="stylesheet" href="./assets/fonts/Spectral/font.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const currentPath = window.location.pathname || "/";
+
+          const navLinks = document.querySelectorAll(".header-menu ul>li>a");
+          navLinks.forEach((link) => {
+            const linkPath = link.getAttribute("href");
+
+            // Normalize paths for comparison
+            let normalizedCurrentPath = currentPath;
+            let normalizedLinkPath = linkPath;
+
+            // Remove leading "./" from link path
+            if (normalizedLinkPath.startsWith("./")) {
+              normalizedLinkPath = normalizedLinkPath.substring(1);
+            }
+
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
+
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
+            const isMatch =
+              normalizedLinkPath === normalizedCurrentPath || // Exact match
+              currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
+              (currentPath.endsWith(normalizedLinkPath) &&
+                normalizedLinkPath !== "/");
+
+            if (isMatch) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <header id="header"></header>
+    <!-- end header -->
+    <script>
+      fetch("./components/cta-mobile.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("cta-mobile").innerHTML = data;
+        });
+    </script>
+    <div id="cta-mobile"></div>
+    <main>
+      <section class="banner">
+        <div class="container-fluid p-0">
+          <div class="banner-container">
+            <div class="banner-video d-none">
+              <video autoplay muted loop playinline preload="auto">
+                <source
+                  src="./assets/images/video-banner.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="banner-image">
+              <img src="./assets/images/banner-menu.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="menu">
+        <div class="container-max-w">
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Appetizers</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-1.webp" alt="" />
+              </a>
+            </div>
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Salads</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-6.webp" alt="" />
+              </a>
+            </div>
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Main Courses</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-2.webp" alt="" />
+              </a>
+            </div>
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Woodfired Pizzas</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-4.webp" alt="" />
+              </a>
+            </div>
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Side Dishes</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-3.webp" alt="" />
+              </a>
+            </div>
+            <div class="menu-item">
+              <div class="menu-title h1-font color-white">Desserts</div>
+              <a href="./menu-detail.html" class="menu-image d-block">
+                <img src="./assets/images/menu-5.webp" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- layout -->
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <footer id="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
+
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <!-- import custom js -->
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+
+    <!-- end import custom js -->
+  </body>
+</html>

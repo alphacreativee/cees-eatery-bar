@@ -921,3 +921,15 @@ body {
 .reservation-note .logo {
   margin-top: 64px;
 }
+
+.menu {
+  padding-top: 96px;
+}
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 96px 30px;
+}
+.menu-title {
+  margin-bottom: 32px;
+}

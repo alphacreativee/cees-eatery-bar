@@ -1,0 +1,11 @@
+.menu {
+  padding-top: 96px;
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 96px 30px;
+  }
+  &-title {
+    margin-bottom: 32px;
+  }
+}
