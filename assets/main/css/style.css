@@ -188,6 +188,8 @@ body {
 }
 .title-text-line .title-text {
   white-space: nowrap;
+  font-size: 56px;
+  line-height: 64px;
 }
 
 .btn-global {
@@ -932,4 +934,34 @@ body {
 }
 .menu-title {
   margin-bottom: 32px;
+}
+
+.menu-food {
+  padding-top: 168px;
+  margin-bottom: 96px;
+}
+.menu-food-title {
+  margin-top: 24px;
+  margin-bottom: 96px;
+}
+.menu-food-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px 30px;
+}
+.menu-food-image {
+  margin-bottom: 20px;
+}
+.menu-food-content .food-name {
+  margin-bottom: 4px;
+}
+.menu-food-content .description {
+  margin-bottom: 24px;
+}
+.menu-food-other {
+  background-color: var(--color-sec-1);
+  padding: 96px 0;
+}
+.menu-food-other .menu-list {
+  margin-top: 96px;
 }
