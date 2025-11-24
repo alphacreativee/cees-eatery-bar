@@ -1,0 +1,81 @@
+.custom-info {
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+  &-wrapper {
+    padding: 40px 100px;
+    background-color: var(--color-sec-1);
+    .title {
+      margin-bottom: 16px;
+    }
+  }
+  .text-wrap {
+    display: flex;
+    gap: 4px;
+    & > * {
+      color: #fff;
+    }
+    .text,
+    .number {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+  }
+  .accordion-button {
+    background-color: transparent;
+    padding: 24px 0;
+    &::after {
+      background-image: url("../../images/icon/ic_arrow.svg");
+      background-size: 100% 100%;
+      width: 9px;
+      height: 5px;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: none;
+  }
+  .accordion-item,
+  .accordion-flush .accordion-item:last-child {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .accordion-item:last-of-type .accordion-button.collapsed {
+    border-radius: 0;
+  }
+  .accordion-body {
+    font-size: 15px;
+    line-height: 24px;
+    color: #fff;
+    padding: 0 0 24px;
+  }
+  .pagination {
+    display: flex;
+    gap: 4px;
+    margin-top: 40px;
+    justify-content: center;
+    .page-number {
+      width: 34px;
+      height: 34px;
+      background-color: var(--color-sec-1);
+      transition: all 0.3s ease-in-out;
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.active {
+        background-color: var(--color-black-op);
+      }
+    }
+  }
+}

@@ -212,6 +212,29 @@ function fieldSuggestion() {
     });
   }
 }
+function initStickyBar() {
+  const formSearch = document.querySelector(".form-search-bar");
+  if (!formSearch) return;
+
+  gsap.to(formSearch, {
+    scrollTrigger: {
+      trigger: formSearch,
+      start: "top center",
+      end: "+=500",
+      scrub: true,
+      // markers: true,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const newTop = gsap.utils.interpolate(
+          window.innerHeight / 2 - formSearch.offsetHeight / 2,
+          106,
+          progress
+        );
+        formSearch.style.top = newTop + "px";
+      },
+    },
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
@@ -219,6 +242,7 @@ const init = () => {
   getDate();
   customDropdown();
   fieldSuggestion();
+  initStickyBar();
 };
 preloadImages("img").then(() => {
   init();

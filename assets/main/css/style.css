@@ -970,6 +970,15 @@ body {
 .menu-title {
   margin-bottom: 32px;
 }
+.menu-image {
+  overflow: hidden;
+}
+.menu-image:hover img {
+  transform: scale(1.05);
+}
+.menu-image img {
+  transition: all 0.3s ease-in-out;
+}
 
 .menu-food {
   padding-top: 168px;
@@ -1011,7 +1020,6 @@ body {
   max-width: 845px;
   width: 100%;
   border-radius: 24px;
-  overflow: hidden;
   padding-left: 12px;
 }
 .form-search-bar form {
@@ -1023,6 +1031,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .form-search-bar .dropdown-custom-menu {
   position: absolute;
@@ -1105,4 +1114,136 @@ body {
   height: 100%;
   padding: 16px 0;
   border-radius: 24px;
+}
+
+.result-form {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+}
+.result-form-container {
+  padding: 40px 100px;
+  background-color: var(--color-sec-1);
+}
+.result-form-container .pagination {
+  display: flex;
+  gap: 4px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.result-form-container .pagination .page-number {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-sec-1);
+  transition: all 0.3s ease-in-out;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-form-container .pagination .page-number.active {
+  background-color: var(--color-black-op);
+}
+.result-form-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 14px;
+}
+.result-form .result-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 40px 0 24px;
+  gap: 30px;
+  border-bottom: 1px solid #fff;
+}
+.result-form .result-grid .item:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-info {
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+}
+.custom-info-wrapper {
+  padding: 40px 100px;
+  background-color: var(--color-sec-1);
+}
+.custom-info-wrapper .title {
+  margin-bottom: 16px;
+}
+.custom-info .text-wrap {
+  display: flex;
+  gap: 4px;
+}
+.custom-info .text-wrap > * {
+  color: #fff;
+}
+.custom-info .text-wrap .text,
+.custom-info .text-wrap .number {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+.custom-info .accordion-button {
+  background-color: transparent;
+  padding: 24px 0;
+}
+.custom-info .accordion-button::after {
+  background-image: url("../../images/icon/ic_arrow.svg");
+  background-size: 100% 100%;
+  width: 9px;
+  height: 5px;
+}
+.custom-info .accordion-button:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.custom-info .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+.custom-info .accordion-item,
+.custom-info .accordion-flush .accordion-item:last-child {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.custom-info .accordion-item:last-of-type .accordion-button.collapsed {
+  border-radius: 0;
+}
+.custom-info .accordion-body {
+  font-size: 15px;
+  line-height: 24px;
+  color: #fff;
+  padding: 0 0 24px;
+}
+.custom-info .pagination {
+  display: flex;
+  gap: 4px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.custom-info .pagination .page-number {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-sec-1);
+  transition: all 0.3s ease-in-out;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-info .pagination .page-number.active {
+  background-color: var(--color-black-op);
 }
