@@ -22,6 +22,7 @@ function headerMobile() {
   });
   menuOverlay.addEventListener("click", function () {
     headerMenuMobile.classList.remove("active");
+    btnHambuger.classList.remove("active");
   });
   menuItems.forEach((item) => {
     const submenu = item.querySelector(".sub-menu");
