@@ -18,6 +18,7 @@ function headerMobile() {
   const menuOverlay = document.querySelector(".menu-mobile-overlay");
   btnHambuger.addEventListener("click", function () {
     headerMenuMobile.classList.toggle("active");
+    btnHambuger.classList.toggle("active");
   });
   menuOverlay.addEventListener("click", function () {
     headerMenuMobile.classList.remove("active");

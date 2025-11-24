@@ -24,6 +24,21 @@
       width: 19px;
       height: 10px;
       position: relative;
+      &.active {
+        span {
+          &:nth-child(1) {
+            top: 4.5px;
+            transform: rotate(135deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            top: 4.5px;
+            transform: rotate(-135deg);
+          }
+        }
+      }
       &::before {
         content: "";
         position: absolute;
@@ -37,6 +52,7 @@
         background-color: var(--color-white);
         left: 0;
         border-radius: 2px;
+        transition: all 0.3s ease-in-out;
         &:nth-child(1) {
           top: 0;
         }
@@ -142,7 +158,7 @@
         display: grid;
         grid-template-columns: 8fr 4fr;
         position: fixed;
-        top: 0;
+        top: 72px;
         left: 0;
         width: 100%;
         height: 100svh;
