@@ -178,6 +178,7 @@
             transform: translateX(0);
           }
         }
+
         ul {
           background-color: var(--color-sec-1);
           transform: translateX(-100%);
@@ -189,6 +190,12 @@
           li {
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             &.menu-item-has-children {
+              &.active {
+                background-color: var(--color-black);
+                & > .sub-menu {
+                  background-color: var(--color-black);
+                }
+              }
               & > a {
                 justify-content: space-between;
                 pointer-events: none;
@@ -235,8 +242,14 @@
               &:hover {
                 color: var(--color-white);
               }
+              &.active {
+                background-color: var(--color-black);
+              }
             }
           }
+        }
+        & > ul {
+          padding-top: 40px;
         }
       }
     }

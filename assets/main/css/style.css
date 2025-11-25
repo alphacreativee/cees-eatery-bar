@@ -439,6 +439,12 @@ body {
   .header-menu-mobile ul li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
+  .header-menu-mobile ul li.menu-item-has-children.active {
+    background-color: var(--color-black);
+  }
+  .header-menu-mobile ul li.menu-item-has-children.active > .sub-menu {
+    background-color: var(--color-black);
+  }
   .header-menu-mobile ul li.menu-item-has-children > a {
     justify-content: space-between;
     pointer-events: none;
@@ -476,6 +482,12 @@ body {
   }
   .header-menu-mobile ul li a:hover {
     color: var(--color-white);
+  }
+  .header-menu-mobile ul li a.active {
+    background-color: var(--color-black);
+  }
+  .header-menu-mobile > ul {
+    padding-top: 40px;
   }
 }
 .header-right {
