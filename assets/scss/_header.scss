@@ -271,9 +271,15 @@
       gap: 5px;
       &.call-now {
         background-color: var(--color-sec-2);
+        &:hover {
+          background-color: var(--color-black-op);
+        }
       }
       &.book-now {
         background-color: var(--color-sec-1);
+        &:hover {
+          background-color: var(--color-black);
+        }
       }
     }
   }

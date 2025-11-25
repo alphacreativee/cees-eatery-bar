@@ -512,8 +512,14 @@ body {
 .header-cta-item.call-now {
   background-color: var(--color-sec-2);
 }
+.header-cta-item.call-now:hover {
+  background-color: var(--color-black-op);
+}
 .header-cta-item.book-now {
   background-color: var(--color-sec-1);
+}
+.header-cta-item.book-now:hover {
+  background-color: var(--color-black);
 }
 
 #cta-mobile {
