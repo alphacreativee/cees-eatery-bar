@@ -1486,6 +1486,11 @@ body {
   align-items: center;
   padding-left: 0;
 }
+@media (max-width: 991px) {
+  .detail-cv .info-box.social ul {
+    gap: 12px;
+  }
+}
 .detail-cv .info-box ul {
   list-style-type: disc;
   padding-left: 22px;
