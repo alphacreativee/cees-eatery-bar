@@ -4,6 +4,9 @@
   z-index: 2;
   @media (max-width: 991px) {
     margin-top: 0;
+    .wf-mobile {
+      background-color: var(--color-sec-1);
+    }
   }
   &-wrap {
     .pagination {
@@ -49,8 +52,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 14px;
     @media (max-width: 991px) {
-      grid-template-columns: 245px 125px 125px 125px;
-      width: 710px;
+      grid-template-columns: 230px 125px 125px 125px;
+      width: 695px;
     }
   }
   .result-grid {
@@ -60,8 +63,8 @@
     gap: 30px;
     border-bottom: 1px solid #fff;
     @media (max-width: 991px) {
-      grid-template-columns: 245px 125px 125px 125px;
-      width: 710px;
+      grid-template-columns: 230px 125px 125px 125px;
+      width: 695px;
       padding: 24px 0 24px;
     }
     .item {

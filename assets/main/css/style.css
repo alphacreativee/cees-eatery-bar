@@ -1552,6 +1552,9 @@ body {
   .result-form {
     margin-top: 0;
   }
+  .result-form .wf-mobile {
+    background-color: var(--color-sec-1);
+  }
 }
 .result-form-wrap .pagination {
   display: flex;
@@ -1598,8 +1601,8 @@ body {
 }
 @media (max-width: 991px) {
   .result-form-top {
-    grid-template-columns: 245px 125px 125px 125px;
-    width: 710px;
+    grid-template-columns: 230px 125px 125px 125px;
+    width: 695px;
   }
 }
 .result-form .result-grid {
@@ -1611,8 +1614,8 @@ body {
 }
 @media (max-width: 991px) {
   .result-form .result-grid {
-    grid-template-columns: 245px 125px 125px 125px;
-    width: 710px;
+    grid-template-columns: 230px 125px 125px 125px;
+    width: 695px;
     padding: 24px 0 24px;
   }
 }
