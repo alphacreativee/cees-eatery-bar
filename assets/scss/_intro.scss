@@ -3,6 +3,11 @@
   position: relative;
   z-index: 2;
   margin-bottom: 96px;
+  &.one-column {
+    .intro-content {
+      padding: 40px 20px;
+    }
+  }
   @media (max-width: 991px) {
     margin-top: 20px;
     margin-bottom: 64px;
@@ -32,11 +37,14 @@
   &.two-description {
     margin-top: 0;
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+      margin-bottom: 64px;
+    }
     .intro-content {
       padding: 96px 48px 30px;
       background-color: transparent;
       @media (max-width: 991px) {
-        padding: 30px 32px;
+        padding: 64px 0px 40px;
       }
     }
     .intro-image {

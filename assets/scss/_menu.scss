@@ -1,12 +1,22 @@
 .menu {
   padding-top: 96px;
+  @media (max-width: 991px) {
+    padding-top: 64px;
+  }
   &-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 96px 30px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 40px 0;
+    }
   }
   &-title {
     margin-bottom: 32px;
+    @media (max-width: 991px) {
+      margin-bottom: 24px;
+    }
   }
   &-image {
     overflow: hidden;

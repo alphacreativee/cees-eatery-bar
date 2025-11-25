@@ -1,14 +1,16 @@
 .mission-vision {
   &-item {
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+      margin-bottom: 64px;
+      flex-direction: column-reverse !important;
+    }
     &:nth-child(even) {
       .mission-box {
         padding-right: 48px;
         padding-left: calc(calc(1 / 12) * 100% + 60px);
         @media (max-width: 991px) {
-          padding-left: 32px;
-          padding-right: 32px;
-          padding-bottom: 32px;
+          padding: 24px 0 0;
         }
       }
     }
@@ -36,20 +38,25 @@
     height: 100%;
     gap: 24px;
     @media (max-width: 991px) {
-      padding-left: 32px;
-      padding-right: 32px;
-      padding-bottom: 32px;
+      padding: 24px 0 0;
     }
   }
   &.private-dining-sec {
     padding-top: 96px;
+    @media (max-width: 991px) {
+      padding-top: 20px;
+    }
     .mission-box {
       padding-right: 48px;
       padding-left: calc(calc(1 / 12) * 100% + 60px);
       @media (max-width: 991px) {
-        padding-left: 32px;
-        padding-right: 32px;
-        padding-bottom: 32px;
+        padding: 24px 0 0;
+        gap: 0;
+      }
+      h2 {
+        @media (max-width: 991px) {
+          margin-bottom: 16px;
+        }
       }
       .btn-global {
         display: inline-block;
@@ -64,9 +71,7 @@
           padding-left: 48px;
           padding-right: calc(calc(1 / 12) * 100% + 60px);
           @media (max-width: 991px) {
-            padding-left: 32px;
-            padding-right: 32px;
-            padding-bottom: 32px;
+            padding: 24px 0 0;
           }
         }
       }

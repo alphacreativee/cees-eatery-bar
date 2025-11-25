@@ -2,10 +2,13 @@
   &-content {
     background-color: var(--color-sec-1);
     padding: 96px 0px 160px;
+    @media (max-width: 991px) {
+      padding: 40px 0 100px;
+    }
     &-wrapper {
       padding: 0 48px;
       @media (max-width: 991px) {
-        padding: 0 24px;
+        padding: 0;
       }
     }
   }
@@ -19,6 +22,9 @@
   }
   &-image {
     margin-top: -100px;
+    @media (max-width: 991px) {
+      margin-top: -50px;
+    }
     .image {
       width: 100%;
       aspect-ratio: 1192 / 570;

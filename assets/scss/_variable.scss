@@ -35,6 +35,10 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
+  @media (max-width: 991px) {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 .b1-font {
   font-family: var(--font-body);

@@ -1,14 +1,25 @@
 .menu-food {
   padding-top: 168px;
   margin-bottom: 96px;
+  @media (max-width: 991px) {
+    margin-bottom: 64px;
+    padding-top: 104px;
+  }
   &-title {
     margin-top: 24px;
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+      margin-bottom: 40px;
+    }
   }
   &-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 64px 30px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 40px 0;
+    }
   }
   &-image {
     margin-bottom: 20px;
@@ -24,8 +35,14 @@
   &-other {
     background-color: var(--color-sec-1);
     padding: 96px 0;
+    @media (max-width: 991px) {
+      padding: 64px 0;
+    }
     .menu-list {
       margin-top: 96px;
+      @media (max-width: 991px) {
+        margin-top: 40px;
+      }
     }
   }
 }

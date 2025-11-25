@@ -14,6 +14,9 @@
   }
   &-list {
     position: relative;
+    @media (max-width: 991px) {
+      padding-bottom: 64px;
+    }
     .swiper-slide {
       height: auto;
     }
@@ -81,9 +84,16 @@
   position: relative;
   z-index: 1;
   margin-bottom: 96px;
+  @media (max-width: 991px) {
+    margin-top: 20px;
+    margin-bottom: 64px;
+  }
   &-box {
     background-color: var(--color-sec-1);
     padding: 40px;
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
     .date {
       margin-bottom: 16px;
     }

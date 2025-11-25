@@ -2,9 +2,15 @@
   position: relative;
   z-index: 2;
   margin-top: -100px;
+  @media (max-width: 991px) {
+    margin-top: 0;
+  }
   &-wrapper {
     padding: 40px 100px;
     background-color: var(--color-sec-1);
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
     .title {
       margin-bottom: 16px;
     }
@@ -55,6 +61,7 @@
     line-height: 24px;
     color: #fff;
     padding: 0 0 24px;
+    max-width: 95%;
   }
   .pagination {
     display: flex;
