@@ -38,6 +38,15 @@
     gap: 16px;
     .read-more {
       background-color: var(--color-black-op);
+      &:hover {
+        background-color: var(--color-sec-1);
+      }
+    }
+    .book-now {
+      &:hover {
+        background-color: var(--color-black-op) !important;
+        color: #fff;
+      }
     }
   }
 }
