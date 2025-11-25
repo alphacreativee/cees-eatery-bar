@@ -1,7 +1,10 @@
 .footer {
   &-container {
-    padding-bottom: 24px;
+    padding-bottom: 56px;
     padding-top: 96px;
+    @media (max-width: 991px) {
+      padding-top: 64px;
+    }
   }
   &-top {
     margin-bottom: 40px;
@@ -13,6 +16,11 @@
 
     @media (max-width: 991px) {
       grid-template-columns: 1fr;
+      gap: 0;
+    }
+    &-text,
+    &-content {
+      display: inline;
     }
     &-title {
       margin-bottom: 4px;
@@ -24,11 +32,15 @@
         gap: 4px;
         li {
           & > * {
-            display: flex;
-            gap: 4px;
+            // display: flex;
+            // gap: 4px;
           }
         }
       }
+    }
+    &-left,
+    &-right {
+      margin-bottom: 24px;
     }
   }
 }

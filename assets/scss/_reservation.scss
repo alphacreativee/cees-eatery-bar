@@ -2,15 +2,27 @@
   margin-top: -100px;
   position: relative;
   z-index: 2;
+  @media (max-width: 991px) {
+    margin-top: 0px;
+  }
   &-wrapper {
     padding: 40px;
     background-color: var(--color-sec-1);
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
   }
   &-top {
     margin-bottom: 64px;
+    @media (max-width: 991px) {
+      margin-bottom: 40px;
+    }
   }
   &-description {
     margin-top: 52px;
+    @media (max-width: 991px) {
+      margin-top: 40px;
+    }
     ul {
       li {
         display: flex;
@@ -24,11 +36,17 @@
       grid-template-columns: 2fr 1fr 1fr;
       gap: 0 30px;
       margin-bottom: 20px;
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
-      .w-grid {
-        grid-column: 2/4;
+      @media (min-width: 992px) {
+        .w-grid {
+          grid-column: 2/4;
+        }
       }
       .input-wrapper {
         display: flex;
@@ -103,6 +121,9 @@
     }
     .logo {
       margin-top: 64px;
+      @media (max-width: 991px) {
+        margin-top: 40px;
+      }
     }
   }
   .dropdown-custom-btn {

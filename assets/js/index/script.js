@@ -71,11 +71,17 @@ function headerMobile() {
 function swiperOffer() {
   if (!document.querySelector(".swiper-offer")) return;
   var swiper = new Swiper(".swiper-offer", {
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".offer-list .swiper-button-next",
       prevEl: ".offer-list .swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
     },
   });
 }
@@ -237,6 +243,48 @@ function initStickyBar() {
     },
   });
 }
+function CTAMobile() {
+  if (window.innerWidth > 992) return;
+
+  const ctaMobile = document.getElementById("cta-mobile");
+  const footer = document.querySelector("footer");
+
+  if (!ctaMobile || !footer) return;
+
+  let isInFooter = false;
+
+  ScrollTrigger.create({
+    trigger: footer,
+    start: "top bottom",
+    end: "bottom bottom",
+    // markers: true,
+    onEnter: () => {
+      isInFooter = true;
+      ctaMobile.classList.add("hidden");
+    },
+    onLeaveBack: () => {
+      isInFooter = false;
+      ctaMobile.classList.remove("hidden");
+    },
+  });
+
+  ScrollTrigger.create({
+    trigger: "body",
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: (self) => {
+      // Chỉ xử lý khi KHÔNG ở trong footer
+      if (!isInFooter) {
+        if (self.direction === 1) {
+          ctaMobile.classList.add("hidden");
+        } else if (self.direction === -1) {
+          ctaMobile.classList.remove("hidden");
+        }
+      }
+    },
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
@@ -245,6 +293,7 @@ const init = () => {
   customDropdown();
   fieldSuggestion();
   initStickyBar();
+  CTAMobile();
 };
 preloadImages("img").then(() => {
   init();

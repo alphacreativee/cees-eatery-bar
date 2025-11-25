@@ -1,10 +1,16 @@
 .offer {
   margin-bottom: 96px;
+  @media (max-width: 991px) {
+    margin-bottom: 64px;
+  }
   &.other-offers {
     margin-bottom: 0;
   }
   &-title {
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+      margin-bottom: 64px;
+    }
   }
   &-list {
     position: relative;
@@ -14,9 +20,15 @@
     .swiper-arrows {
       .swiper-button-prev {
         left: -64px;
+        @media (max-width: 991px) {
+          left: calc(calc(50%) - 40px);
+        }
       }
       .swiper-button-next {
         right: -64px;
+        @media (max-width: 991px) {
+          right: calc(calc(50%) - 40px);
+        }
       }
     }
   }
@@ -52,6 +64,9 @@
     }
     &-content {
       padding: 24px;
+      @media (max-width: 991px) {
+        padding: 20px;
+      }
       h4 {
         margin-bottom: 16px;
       }

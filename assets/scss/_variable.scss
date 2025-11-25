@@ -19,6 +19,10 @@
   font-size: 56px;
   line-height: 64px;
   font-weight: 400;
+  @media (max-width: 991px) {
+    font-size: 40px;
+    line-height: 56px;
+  }
 }
 .h2-font {
   font-family: var(--font-heading);
@@ -65,5 +69,8 @@
   margin: 0 auto;
   @media (max-width: 991px) {
     padding: 0 20px;
+    &.wf-mobile {
+      padding: 0;
+    }
   }
 }
