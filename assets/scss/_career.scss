@@ -115,13 +115,31 @@
 .detail-cv {
   padding-top: 130px;
   margin-bottom: 96px;
+  @media (max-width: 991px) {
+    padding-top: 104px;
+    margin-bottom: 64px;
+  }
+  &-title {
+    @media (max-width: 991px) {
+      padding: 0 20px;
+    }
+  }
   &-date {
     margin-top: 24px;
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+      margin-bottom: 64px;
+      padding: 0 20px;
+    }
     ul {
       display: flex;
       align-items: center;
       gap: 40px;
+      @media (max-width: 991px) {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
       li {
         .date-item {
           display: flex;
@@ -135,6 +153,10 @@
     display: grid;
     grid-template-columns: 7fr 5fr;
     gap: 40px;
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      gap: 64px;
+    }
   }
   .col-item {
     h3 {
@@ -174,18 +196,33 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    @media (max-width: 991px) {
+      gap: 24px;
+    }
   }
   .col-info {
     padding-right: calc(calc(1 / 12) * 100% + 30px);
+    @media (max-width: 991px) {
+      padding: 0 20px;
+    }
   }
   .col-form {
     position: sticky;
     top: 0;
     height: max-content;
+    @media (max-width: 991px) {
+      position: static;
+      h3 {
+        padding: 0 20px;
+      }
+    }
   }
   .form-cv {
     background-color: var(--color-sec-1);
     padding: 40px;
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
     .form-wrapper {
       display: flex;
       flex-direction: column;
