@@ -508,6 +508,7 @@ body {
 }
 .header-cta-item {
   gap: 5px;
+  transition: all 0.3s ease-in-out;
 }
 .header-cta-item.call-now {
   background-color: var(--color-sec-2);

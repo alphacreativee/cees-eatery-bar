@@ -269,6 +269,7 @@
     height: 100%;
     &-item {
       gap: 5px;
+      transition: all 0.3s ease-in-out;
       &.call-now {
         background-color: var(--color-sec-2);
         &:hover {
