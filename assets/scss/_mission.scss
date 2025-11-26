@@ -49,11 +49,13 @@
     .mission-box {
       padding-right: 48px;
       padding-left: calc(calc(1 / 12) * 100% + 60px);
+      gap: 0;
       @media (max-width: 991px) {
         padding: 24px 0 0;
         gap: 0;
       }
       h2 {
+        margin-bottom: 16px;
         @media (max-width: 991px) {
           margin-bottom: 16px;
         }
