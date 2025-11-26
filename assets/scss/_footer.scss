@@ -41,7 +41,9 @@
     }
     &-left,
     &-right {
-      margin-bottom: 24px;
+      @media (max-width: 991px) {
+        margin-bottom: 24px;
+      }
     }
   }
 }
