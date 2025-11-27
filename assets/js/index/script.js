@@ -284,7 +284,67 @@ function CTAMobile() {
     },
   });
 }
+function handlePageVisibilityAndFavicon() {
+  const originalTitle = document.title;
+  let faviconInterval;
+  let isBlinking = false;
 
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      document.title = "Cee's Restaurant & Bar";
+      startFaviconBlinking();
+    } else {
+      document.title = originalTitle;
+      stopFaviconBlinking();
+    }
+  });
+
+  function changeFavicon(src) {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      link.type = "image/svg+xml"; // Thêm MIME type cho SVG
+      document.head.appendChild(link);
+    }
+    link.href = `${src}?v=${new Date().getTime()}`;
+  }
+
+  function startFaviconBlinking() {
+    if (isBlinking) return; // Tránh chạy nhiều interval
+
+    isBlinking = true;
+    const hostname = window.location.origin;
+
+    const favicons = [
+      `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-black.svg`,
+      `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-gray.svg`,
+    ];
+    // const favicons = [
+    //   "./assets/images/icon/favicon-black.svg",
+    //   "./assets/images/icon/favicon-gray.svg",
+    // ];
+    let faviconIndex = 0;
+
+    faviconInterval = setInterval(() => {
+      changeFavicon(favicons[faviconIndex]);
+      faviconIndex = (faviconIndex + 1) % favicons.length;
+    }, 500);
+  }
+
+  function stopFaviconBlinking(assestUrl) {
+    clearInterval(faviconInterval);
+    isBlinking = false;
+    const hostname = window.location.origin;
+    changeFavicon(
+      `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-black.svg`
+    );
+    // changeFavicon("./assets/images/icon/favicon-black.svg");
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  handlePageVisibilityAndFavicon();
+});
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
