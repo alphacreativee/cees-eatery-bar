@@ -37,6 +37,11 @@
     justify-content: center;
     height: 100%;
     gap: 24px;
+    .btn-global {
+      &:hover {
+        background-color: var(--color-sec-1) !important;
+      }
+    }
     @media (max-width: 991px) {
       padding: 24px 0 0;
     }

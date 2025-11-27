@@ -16,6 +16,12 @@
     margin-bottom: 18px;
   }
   &-description {
+    p {
+      margin-bottom: 18px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
     .br {
       height: 18px;
     }

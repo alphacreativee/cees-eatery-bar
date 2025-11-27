@@ -626,7 +626,18 @@ body {
   margin-bottom: 96px;
 }
 .intro.one-column .intro-content {
-  padding: 40px 20px;
+  padding: 64px 48px;
+}
+@media (max-width: 991px) {
+  .intro.one-column .intro-content {
+    padding: 40px 20px;
+  }
+}
+.intro.two-description .intro-description p {
+  margin-bottom: 18px;
+}
+.intro.two-description .intro-description p:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 991px) {
   .intro {
@@ -755,6 +766,9 @@ body {
   height: 100%;
   gap: 24px;
 }
+.mission-vision .mission-box .btn-global:hover {
+  background-color: var(--color-sec-1) !important;
+}
 @media (max-width: 991px) {
   .mission-vision .mission-box {
     padding: 24px 0 0;
@@ -822,6 +836,12 @@ body {
 }
 .team-title {
   margin-bottom: 18px;
+}
+.team-description p {
+  margin-bottom: 18px;
+}
+.team-description p:last-child {
+  margin-bottom: 0;
 }
 .team-description .br {
   height: 18px;
