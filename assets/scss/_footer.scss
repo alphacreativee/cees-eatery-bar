@@ -46,4 +46,11 @@
       }
     }
   }
+  &-alpha {
+    a {
+      &::before {
+        bottom: -2px;
+      }
+    }
+  }
 }

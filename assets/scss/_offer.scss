@@ -38,7 +38,11 @@
   &-item {
     height: 100%;
     background-color: var(--color-sec-1);
-
+    &:hover {
+      .offer-item-image img {
+        transform: scale(1.05);
+      }
+    }
     &-top {
       position: relative;
     }
@@ -46,10 +50,12 @@
       width: 100%;
       aspect-ratio: 378 / 250;
       height: 250px;
+      overflow: hidden;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: all 0.3s ease-in-out;
       }
     }
     &-date {
