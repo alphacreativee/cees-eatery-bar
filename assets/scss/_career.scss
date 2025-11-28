@@ -199,9 +199,40 @@
   .info-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    @media (max-width: 991px) {
-      gap: 24px;
+  }
+  .info-content {
+    & > * {
+      color: #fff;
+    }
+    h3,
+    h4,
+    h5 {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      @media (max-width: 991px) {
+        margin-bottom: 16px;
+      }
+    }
+    p {
+      margin-bottom: 40px;
+      @media (max-width: 991px) {
+        margin-bottom: 24px;
+      }
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 22px;
+      margin-bottom: 40px;
+      @media (max-width: 991px) {
+        margin-bottom: 24px;
+      }
+      li {
+        p {
+          margin-bottom: 0;
+        }
+      }
     }
   }
   .col-info {
