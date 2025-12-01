@@ -176,10 +176,10 @@ body {
     display: inline-block;
     position: relative;
   }
-  .hover-line:hover {
+  .hover-line:hover, .hover-line.active {
     color: var(--color-white);
   }
-  .hover-line:hover::before {
+  .hover-line:hover::before, .hover-line.active::before {
     width: 100%;
   }
   .hover-line::before {
@@ -256,6 +256,102 @@ body {
   position: relative;
 }
 
+button.aloading {
+  pointer-events: none;
+  color: transparent !important;
+  background-color: var(--color-black-op) !important;
+  position: relative;
+}
+button.aloading::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top: 2px solid var(--color-white);
+  border-right: 2px solid var(--color-white);
+  width: 20px;
+  height: 20px;
+  animation: spin-animation 1s linear infinite;
+  z-index: 2;
+  background: 0 0;
+}
+@keyframes spin-animation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.modal-success .modal-dialog {
+  width: 360px;
+  height: 360px;
+}
+@media (max-width: 767px) {
+  .modal-success .modal-dialog {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+}
+.modal-success .modal-content {
+  border: none;
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  .modal-success .modal-content {
+    width: 320px;
+    height: 320px;
+  }
+}
+.modal-success .modal-content .desc {
+  margin-top: 16px;
+}
+.modal-success .modal-content {
+  background-color: var(--color-black-op);
+  border-radius: unset;
+}
+.modal-success .modal-body {
+  height: 360px;
+  background: var(--color-black-op);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.modal-success .modal-body .icon {
+  width: 40%;
+  height: auto;
+  margin: 0 auto 24px;
+}
+.modal-success .modal-body .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightpick__day.is-end-date,
+.lightpick__day.is-end-date:hover,
+.lightpick__day.is-start-date,
+.lightpick__day.is-start-date:hover {
+  background-color: var(--color-black);
+  background-image: unset;
+  border-radius: 50%;
+}
+
+.lightpick__close-action,
+.lightpick__next-action,
+.lightpick__previous-action {
+  font-size: 16px;
+  padding-bottom: 3px;
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -265,7 +361,7 @@ body {
 }
 
 .header-container {
-  background-color: var(--color-sec-1);
+  background-color: var(--color-black-op);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   height: 72px;
@@ -918,7 +1014,7 @@ body {
   background-color: var(--color-sec-1);
 }
 .offer-item:hover .offer-item-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .offer-item-top {
   position: relative;
@@ -933,7 +1029,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease;
 }
 .offer-item-date {
   position: absolute;
@@ -1047,13 +1143,13 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease;
 }
 .event-box {
   position: relative;
 }
 .event-box:hover .event-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .event-content {
   position: absolute;
@@ -1137,6 +1233,29 @@ body {
     gap: 0 8px;
   }
 }
+.reservation-description a {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+.reservation-description a:hover {
+  color: var(--color-white);
+}
+.reservation-description a:hover::before {
+  width: 100%;
+}
+.reservation-description a::before {
+  content: "";
+  position: absolute;
+  left: 1px;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
 .reservation-form .form-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -1178,6 +1297,13 @@ body {
   color: var(--color-black);
   font-family: var(--font-body);
 }
+.reservation-form .form-row .input-wrapper input[type=number] {
+  -moz-appearance: textfield;
+}
+.reservation-form .form-row .input-wrapper input[type=number]::-webkit-outer-spin-button, .reservation-form .form-row .input-wrapper input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .reservation-form .form-row .input-wrapper select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1186,6 +1312,9 @@ body {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: calc(100% - 10px) center;
+}
+.reservation-form .form-row .input-wrapper.error label {
+  color: #ee0000;
 }
 .reservation-form .form-note {
   display: flex;
@@ -1223,7 +1352,7 @@ body {
   flex-direction: column;
   gap: 18px;
 }
-.reservation-note p.see-you-soon {
+.reservation-note p {
   margin-top: 18px;
 }
 .reservation-note .logo {
@@ -1383,16 +1512,32 @@ body {
   border-radius: 24px;
   padding-left: 12px;
 }
+@media (max-width: 991px) {
+  .form-search-bar {
+    width: calc(100% - 40px);
+    top: 100px !important;
+  }
+}
 .form-search-bar form {
   display: grid;
   grid-template-columns: repeat(3, 1fr) 150px;
   gap: 32px;
+}
+@media (max-width: 991px) {
+  .form-search-bar form {
+    grid-template-columns: 1fr 120px;
+  }
 }
 .form-search-bar .form-item {
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+}
+@media (max-width: 991px) {
+  .form-search-bar .form-item.time, .form-search-bar .form-item.service {
+    display: none;
+  }
 }
 .form-search-bar .dropdown-custom-menu {
   position: absolute;
@@ -1475,6 +1620,10 @@ body {
   height: 100%;
   padding: 16px 0;
   border-radius: 24px;
+  transition: all 0.4s ease;
+}
+.form-search-bar button:hover {
+  background-color: var(--color-black-op);
 }
 
 .result-form.other-position {
@@ -1653,6 +1802,9 @@ body {
   flex-direction: column-reverse;
   gap: 10px;
 }
+.detail-cv .form-cv .form-wrapper .form-row.error label {
+  color: #ee0000;
+}
 .detail-cv .form-cv .form-wrapper .form-row.up-file {
   width: 100%;
   position: relative;
@@ -1660,7 +1812,7 @@ body {
 .detail-cv .form-cv .form-wrapper .form-row.up-file .icon {
   position: absolute;
   right: 12px;
-  bottom: 12px;
+  top: 35px;
 }
 .detail-cv .form-cv .form-wrapper .form-row.up-file input {
   outline: none;
@@ -1672,6 +1824,14 @@ body {
   padding: 9px 16px;
   height: 42px;
   text-indent: -9999px;
+}
+.detail-cv .form-cv .form-wrapper .form-row.up-file .text-file {
+  position: absolute;
+  top: 40px;
+  left: 16px;
+  pointer-events: none;
+  font-size: 15px;
+  line-height: 15px;
 }
 .detail-cv .form-cv .form-wrapper .form-row input {
   outline: none;

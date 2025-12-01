@@ -30,14 +30,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.5s ease;
     }
   }
   &-box {
     position: relative;
     &:hover {
       .event-image img {
-        transform: scale(1.05);
+        transform: scale(1.1);
       }
     }
   }

@@ -245,7 +245,7 @@
             <div class="col-form col-item">
               <h3 class="h2-font color-white">Apply for a position</h3>
               <div class="form-cv">
-                <form action="">
+                <form action="" id="formReruitment">
                   <div class="form-wrapper">
                     <div class="form-row">
                       <input
@@ -271,7 +271,7 @@
                       <input
                         type="email"
                         placeholder="your email"
-                        name="name"
+                        name="email"
                         autocomplete="off"
                       />
                       <label
@@ -281,6 +281,10 @@
                       >
                     </div>
                     <div class="form-row up-file">
+                      <div class="note btn-2-font pdf-note color-white">
+                        Accept PDF/DOC/DOCX/JPG/PNG &lt;5MB
+                      </div>
+                      <div class="text-file color-primary"></div>
                       <input
                         type="file"
                         name="upload"
@@ -290,7 +294,7 @@
                         accept=".pdf,.doc,.docx"
                       />
                       <label
-                        for="email"
+                        for="upload"
                         class="btn-2-font color-white text-uppercase"
                         >PORTFOLIO/CV</label
                       >
@@ -317,6 +321,7 @@
                         </svg>
                       </div>
                     </div>
+
                     <div class="form-row">
                       <textarea name="note" rows="2"></textarea>
                       <label
@@ -426,6 +431,26 @@
       </section>
     </main>
     <!-- layout -->
+
+    <div class="modal modal-success fade" tabindex="-1" id="modalSuccess">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="icon">
+              <img src="./assets/images/icon/logo_white.svg" alt="" />
+            </div>
+            <div class="title b1-bold-font text-center color-white">
+              Cảm ơn bạn đã ứng tuyển!
+            </div>
+            <div class="desc tag-font text-center color-white">
+              Hồ sơ của bạn đã được gửi thành công. <br />
+              Chúng tôi sẽ kết nối bạn sớm.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- footer -->
     <script>
       fetch("./components/footer.html")

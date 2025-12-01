@@ -2,7 +2,8 @@
   .hover-line {
     display: inline-block;
     position: relative;
-    &:hover {
+    &:hover,
+    &.active {
       color: var(--color-white);
       &::before {
         width: 100%;
@@ -74,4 +75,109 @@
 }
 .dropdown-custom-select {
   position: relative;
+}
+
+button {
+  &.aloading {
+    pointer-events: none;
+    color: transparent !important;
+    background-color: var(--color-black-op) !important;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid transparent;
+      border-radius: 50%;
+      border-top: 2px solid var(--color-white);
+      border-right: 2px solid var(--color-white);
+      width: 20px;
+      height: 20px;
+      animation: spin-animation 1s linear infinite;
+      z-index: 2;
+      background: 0 0;
+    }
+
+    @keyframes spin-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  }
+}
+
+.modal-success {
+  .modal-dialog {
+    width: 360px;
+    height: 360px;
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0;
+      justify-content: center;
+    }
+  }
+
+  .modal-content {
+    border: none;
+    // border-radius: 8px;
+    overflow: hidden;
+    @media (max-width: 991px) {
+      width: 320px;
+      height: 320px;
+    }
+    .desc {
+      margin-top: 16px;
+    }
+  }
+
+  .modal-content {
+    background-color: var(--color-black-op);
+    border-radius: unset;
+  }
+
+  .modal-body {
+    height: 360px;
+    background: var(--color-black-op);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+
+    .icon {
+      width: 40%;
+      height: auto;
+      margin: 0 auto 24px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.lightpick__day.is-end-date,
+.lightpick__day.is-end-date:hover,
+.lightpick__day.is-start-date,
+.lightpick__day.is-start-date:hover {
+  background-color: var(--color-black);
+  background-image: unset;
+  border-radius: 50%;
+}
+
+.lightpick__close-action,
+.lightpick__next-action,
+.lightpick__previous-action {
+  font-size: 16px;
+  padding-bottom: 3px;
 }
