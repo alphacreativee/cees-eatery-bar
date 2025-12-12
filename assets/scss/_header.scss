@@ -190,12 +190,12 @@
           li {
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             &.menu-item-has-children {
-              &.active {
-                background-color: var(--color-black);
-                & > .sub-menu {
-                  background-color: var(--color-black);
-                }
-              }
+              // &.active {
+              //   background-color: var(--color-black);
+              //   & > .sub-menu {
+              //     background-color: var(--color-black);
+              //   }
+              // }
               & > a {
                 justify-content: space-between;
                 pointer-events: none;
@@ -221,7 +221,7 @@
                 transition: height 0.3s;
                 display: flex;
                 flex-direction: column;
-                gap: 0;
+                gap: 8px;
                 padding-right: 0;
               }
               &.active {
@@ -243,7 +243,7 @@
                 color: var(--color-white);
               }
               &.active {
-                background-color: var(--color-black);
+                // background-color: var(--color-black);
               }
             }
           }

@@ -32,7 +32,7 @@ function headerMobile() {
     }
 
     item.addEventListener("click", function (e) {
-      e.preventDefault();
+      // e.preventDefault();
 
       const isActive = this.classList.contains("active");
 
@@ -75,14 +75,14 @@ function swiperOffer() {
     spaceBetween: 20,
     navigation: {
       nextEl: ".offer-list .swiper-button-next",
-      prevEl: ".offer-list .swiper-button-prev"
+      prevEl: ".offer-list .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 3,
-        spaceBetween: 30
-      }
-    }
+        spaceBetween: 30,
+      },
+    },
   });
 }
 function getDate() {
@@ -100,7 +100,7 @@ function getDate() {
 
       const formatted = date.format("DD-MM-YYYY");
       document.querySelector('input[name="form_date"]').value = formatted;
-    }
+    },
   });
 }
 function customDropdown() {
@@ -263,8 +263,8 @@ function initStickyBar() {
           progress
         );
         formSearch.style.top = newTop + "px";
-      }
-    }
+      },
+    },
   });
 }
 function CTAMobile() {
@@ -289,7 +289,7 @@ function CTAMobile() {
     onLeaveBack: () => {
       isInFooter = false;
       ctaMobile.classList.remove("hidden");
-    }
+    },
   });
 
   ScrollTrigger.create({
@@ -305,7 +305,7 @@ function CTAMobile() {
           ctaMobile.classList.remove("hidden");
         }
       }
-    }
+    },
   });
 }
 function handlePageVisibilityAndFavicon() {
@@ -342,7 +342,7 @@ function handlePageVisibilityAndFavicon() {
 
     const favicons = [
       `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-black.svg`,
-      `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-gray.svg`
+      `${hostname}/wp-content/themes/cees/assets/images/icon/favicon-gray.svg`,
     ];
     // const favicons = [
     //   "./assets/images/icon/favicon-black.svg",
@@ -492,7 +492,7 @@ function formReservation() {
           '<span class="contact-message body-sm-regular d-block" style="color:#F00;margin-top: 10px;">Something went wrong. Please try again later.</span>'
         );
         $buttonSubmit.removeClass("aloading");
-      }
+      },
     });
   });
 }
@@ -510,7 +510,7 @@ function uploadPdf() {
       "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       "image/jpeg",
-      "image/png"
+      "image/png",
     ];
     const maxSize = 5 * 1024 * 1024;
 
@@ -643,7 +643,7 @@ function formReruitment() {
           '<span class="contact-message body-sm-regular" style="color:#F00;">Có lỗi xảy ra, vui lòng thử lại sau.</span>'
         );
         $buttonSubmit.removeClass("aloading");
-      }
+      },
     });
   });
 }
@@ -664,7 +664,7 @@ function searchReruitment() {
         $form
           .find(".form-item.service .dropdown-custom-select")
           .attr("data-value") || "",
-      paged: paged
+      paged: paged,
     };
 
     console.log($form.find(".form-item.service .dropdown-custom-select"));
@@ -686,7 +686,7 @@ function searchReruitment() {
       error: function () {
         alert("Có lỗi xảy ra, vui lòng thử lại.");
         $button.removeClass("aloading");
-      }
+      },
     });
   }
 
