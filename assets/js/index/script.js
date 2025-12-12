@@ -423,7 +423,6 @@ function formReservation() {
     }
 
     if (!validateSelect(".input-wrapper.time")) isValid = false;
-    if (!validateSelect(".input-wrapper.location")) isValid = false;
     if (!validateSelect(".input-wrapper.select-event")) isValid = false;
 
     if (!isValid) return;
@@ -445,15 +444,7 @@ function formReservation() {
         .text()
         .trim()
     );
-    formData.append(
-      "location",
-      $form
-        .find(
-          ".input-wrapper.location .dropdown-custom-select.selected .dropdown-custom-text"
-        )
-        .text()
-        .trim()
-    );
+
     formData.append(
       "event",
       $form
