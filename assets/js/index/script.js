@@ -692,7 +692,18 @@ function searchReruitment() {
     loadCareerResults(page);
   });
 }
-
+function swiperBanner() {
+  if (!document.querySelector(".swiper-banner")) return;
+  const swiperBanner = new Swiper(".swiper-banner", {
+    loop: true,
+    speed: 900,
+    effect: "fade",
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
@@ -706,6 +717,7 @@ const init = () => {
   uploadPdf();
   formReruitment();
   searchReruitment();
+  swiperBanner();
 };
 preloadImages("img").then(() => {
   init();

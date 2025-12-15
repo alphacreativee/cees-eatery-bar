@@ -646,7 +646,7 @@ button.aloading::after {
 }
 .footer-main {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  grid-template-columns: 5fr 4fr 3fr;
   gap: 40px 30px;
 }
 @media (max-width: 991px) {
@@ -671,8 +671,24 @@ button.aloading::after {
     margin-bottom: 24px;
   }
 }
+@media (min-width: 992px) {
+  .footer-alpha {
+    grid-column: 3/4;
+  }
+}
 .footer-alpha a::before {
   bottom: -2px;
+}
+@media (max-width: 991px) {
+  .footer-follow-us {
+    margin-bottom: 24px;
+  }
+}
+.footer-follow-us .follow-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
 }
 
 .banner-container {
