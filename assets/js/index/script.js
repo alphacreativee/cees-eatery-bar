@@ -702,6 +702,32 @@ function searchReruitment() {
   });
 }
 
+function customerInfo() {
+  if ($(".custom-info").length < 1) return;
+
+  // Delegation: Gán sự kiện thông qua document
+  $(document).on(
+    "click",
+    ".custom-info .pagination .page-number",
+    function (e) {
+      e.preventDefault();
+
+      let thisPageNumber = $(this).data("page");
+      console.log(thisPageNumber);
+
+      // Cập nhật active
+      $(".custom-info .pagination .page-number").removeClass("active");
+      $(this).addClass("active");
+
+      // Ẩn/hiện theo page
+      $(".custom-info .accordion-item").addClass("d-none");
+      $(
+        `.custom-info .accordion-item[data-page='${thisPageNumber}']`
+      ).removeClass("d-none");
+    }
+  );
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
@@ -715,6 +741,7 @@ const init = () => {
   uploadPdf();
   formReruitment();
   searchReruitment();
+  customerInfo();
 };
 preloadImages("img").then(() => {
   init();
