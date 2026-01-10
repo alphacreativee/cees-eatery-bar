@@ -32,7 +32,7 @@ function headerMobile() {
     }
 
     item.addEventListener("click", function (e) {
-      e.preventDefault();
+      // e.preventDefault();
 
       const isActive = this.classList.contains("active");
 
@@ -374,6 +374,21 @@ function formReservation() {
   const $form = $(".reservation-form form");
   if ($form.length < 1) return;
 
+  const tomorrow = moment().add(1, "day");
+
+  var picker = new Lightpick({
+    field: document.getElementById("date"),
+    singleDate: true,
+    minDate: tomorrow,
+
+    onSelect: function (date) {
+      if (!date) return;
+
+      const formatted = date.format("DD-MM-YYYY");
+      document.querySelector('input[name="form_date"]').value = formatted;
+    }
+  });
+
   $form.on("submit", function (e) {
     e.preventDefault();
 
@@ -382,6 +397,7 @@ function formReservation() {
     const $inputPhone = $form.find("input[name='phone']");
     const $inputEmail = $form.find("input[name='email']");
     const $inputGuest = $form.find("input[name='guest']");
+    const $inputDate = $form.find("input[name='date']");
     const $buttonSubmit = $form.find("button[type='submit']");
     const emailRecipient = $buttonSubmit.attr("email-recipient");
 
@@ -423,7 +439,6 @@ function formReservation() {
     }
 
     if (!validateSelect(".input-wrapper.time")) isValid = false;
-    if (!validateSelect(".input-wrapper.location")) isValid = false;
     if (!validateSelect(".input-wrapper.select-event")) isValid = false;
 
     if (!isValid) return;
@@ -435,6 +450,7 @@ function formReservation() {
     formData.append("phone", $inputPhone.val().trim());
     formData.append("email", $inputEmail.val().trim());
     formData.append("guest", $inputGuest.val().trim());
+    formData.append("date", $inputDate.val().trim());
 
     formData.append(
       "time",
@@ -445,15 +461,7 @@ function formReservation() {
         .text()
         .trim()
     );
-    formData.append(
-      "location",
-      $form
-        .find(
-          ".input-wrapper.location .dropdown-custom-select.selected .dropdown-custom-text"
-        )
-        .text()
-        .trim()
-    );
+
     formData.append(
       "event",
       $form
@@ -727,7 +735,18 @@ function customerInfo() {
     }
   );
 }
-
+function swiperBanner() {
+  if (!document.querySelector(".swiper-banner")) return;
+  const swiperBanner = new Swiper(".swiper-banner", {
+    loop: true,
+    speed: 900,
+    effect: "fade",
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    }
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
@@ -742,6 +761,7 @@ const init = () => {
   formReruitment();
   searchReruitment();
   customerInfo();
+  swiperBanner();
 };
 preloadImages("img").then(() => {
   init();
