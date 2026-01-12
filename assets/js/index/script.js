@@ -376,10 +376,24 @@ function formReservation() {
 
   const tomorrow = moment().add(1, "day");
 
+  const disabledDatesArr = [
+    "09-02-2026",
+    "15-02-2026",
+    "16-02-2026",
+    "17-02-2026",
+    "18-02-2026",
+    "19-02-2026",
+    "20-02-2026",
+    "21-02-2026",
+    "22-02-2026"
+  ];
+
   var picker = new Lightpick({
     field: document.getElementById("date"),
     singleDate: true,
     minDate: tomorrow,
+
+    disableDates: disabledDatesArr.map((d) => moment(d, "DD-MM-YYYY")),
 
     onSelect: function (date) {
       if (!date) return;
