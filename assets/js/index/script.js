@@ -374,32 +374,37 @@ function formReservation() {
   const $form = $(".reservation-form form");
   if ($form.length < 1) return;
 
-  const tomorrow = moment().add(1, "day");
+  const tomorrow = moment().add(1, "day").startOf("day");
 
   const disabledDatesArr = [
-    "10-02-2026",
-    "15-02-2026",
-    "16-02-2026",
-    "17-02-2026",
-    "18-02-2026",
-    "19-02-2026",
-    "20-02-2026",
-    "21-02-2026",
-    "22-02-2026"
+    "10/02/2026",
+    "15/02/2026",
+    "16/02/2026",
+    "17/02/2026",
+    "18/02/2026",
+    "19/02/2026",
+    "20/02/2026",
+    "21/02/2026",
+    "22/02/2026"
   ];
 
   var picker = new Lightpick({
     field: document.getElementById("date"),
     singleDate: true,
     minDate: tomorrow,
+    // autoClose: true,
 
-    disableDates: disabledDatesArr.map((d) => moment(d, "DD-MM-YYYY")),
+    disableDates: disabledDatesArr.map((d) =>
+      moment(d, "DD/MM/YYYY", true).startOf("day")
+    ),
 
     onSelect: function (date) {
       if (!date) return;
 
-      const formatted = date.format("DD-MM-YYYY");
-      document.querySelector('input[name="form_date"]').value = formatted;
+      const formatted = date.format("DD/MM/YYYY");
+      document.querySelector('input[name="date"]').value = formatted;
+
+      picker.hide();
     }
   });
 
@@ -412,6 +417,7 @@ function formReservation() {
     const $inputEmail = $form.find("input[name='email']");
     const $inputGuest = $form.find("input[name='guest']");
     const $inputDate = $form.find("input[name='date']");
+    const $inputMessage = $form.find("textarea[name='note']");
     const $buttonSubmit = $form.find("button[type='submit']");
     const emailRecipient = $buttonSubmit.attr("email-recipient");
 
@@ -424,6 +430,10 @@ function formReservation() {
     // --- Validate text inputs ---
     if ($inputName.val().trim() === "") {
       $inputName.closest(".input-wrapper").addClass("error");
+      isValid = false;
+    }
+    if ($inputDate.val().trim() === "") {
+      $inputDate.closest(".input-wrapper").addClass("error");
       isValid = false;
     }
     if ($inputPhone.val().trim() === "") {
@@ -465,6 +475,10 @@ function formReservation() {
     formData.append("email", $inputEmail.val().trim());
     formData.append("guest", $inputGuest.val().trim());
     formData.append("date", $inputDate.val().trim());
+    formData.append(
+      "note",
+      $inputMessage && $inputMessage.length ? $inputMessage.val().trim() : ""
+    );
 
     formData.append(
       "time",
@@ -765,7 +779,7 @@ const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   headerMobile();
   swiperOffer();
-  getDate();
+  // getDate();
   customDropdown();
   fieldSuggestion();
   initStickyBar();
