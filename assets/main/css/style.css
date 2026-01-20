@@ -289,8 +289,8 @@ button.aloading::after {
 }
 
 .modal-success .modal-dialog {
-  width: 360px;
-  height: 360px;
+  width: 380px;
+  height: 380px;
 }
 @media (max-width: 767px) {
   .modal-success .modal-dialog {
@@ -306,11 +306,20 @@ button.aloading::after {
 @media (max-width: 991px) {
   .modal-success .modal-content {
     width: 320px;
-    height: 320px;
+    height: 380px;
   }
 }
 .modal-success .modal-content .desc {
   margin-top: 16px;
+}
+.modal-success .modal-content .desc a {
+  color: var(--color-white);
+}
+.modal-success .modal-content .desc a:hover {
+  color: var(--color-white);
+}
+.modal-success .modal-content .desc p:not(:first-child) {
+  margin-top: 8px;
 }
 .modal-success .modal-content {
   background-color: var(--color-black-op);

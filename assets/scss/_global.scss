@@ -115,8 +115,8 @@ button {
 
 .modal-success {
   .modal-dialog {
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
     @media (max-width: 767px) {
       width: 100%;
       margin: 0;
@@ -130,10 +130,23 @@ button {
     overflow: hidden;
     @media (max-width: 991px) {
       width: 320px;
-      height: 320px;
+      height: 380px;
     }
     .desc {
       margin-top: 16px;
+
+      a {
+        color: var(--color-white);
+        &:hover {
+          color: var(--color-white);
+        }
+      }
+
+      p {
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+      }
     }
   }
 
