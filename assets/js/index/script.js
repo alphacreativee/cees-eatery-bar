@@ -378,6 +378,7 @@ function formReservation() {
 
   const disabledDatesArr = [
     "10/02/2026",
+    "14/02/2026",
     "15/02/2026",
     "16/02/2026",
     "17/02/2026",
