@@ -123,6 +123,40 @@
             color: #ee0000;
           }
         }
+
+        .phone-input-group {
+          display: grid;
+          grid-template-columns: 90px minmax(0, 1fr);
+          position: relative;
+
+          input {
+            min-width: 0;
+          }
+
+          @media (max-width: 480px) {
+            grid-template-columns: 90px minmax(0, 1fr);
+          }
+        }
+
+        .phone-country-select {
+          position: relative;
+
+          .dropdown-custom-btn {
+            border-right: 1px solid rgba(21, 21, 21, 0.16);
+            padding: 10px 12px;
+          }
+
+          .dropdown-custom-text {
+            white-space: nowrap;
+          }
+
+          .dropdown-custom-menu {
+            width: max-content;
+            min-width: 220px;
+            max-height: 240px;
+            overflow-y: auto;
+          }
+        }
       }
     }
     .form-note {

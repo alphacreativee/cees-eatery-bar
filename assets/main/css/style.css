@@ -1332,6 +1332,35 @@ button.aloading::after {
 .reservation-form .form-row .input-wrapper.error label {
   color: #ee0000;
 }
+.reservation-form .form-row .input-wrapper .phone-input-group {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  position: relative;
+}
+.reservation-form .form-row .input-wrapper .phone-input-group input {
+  min-width: 0;
+}
+@media (max-width: 480px) {
+  .reservation-form .form-row .input-wrapper .phone-input-group {
+    grid-template-columns: 90px minmax(0, 1fr);
+  }
+}
+.reservation-form .form-row .input-wrapper .phone-country-select {
+  position: relative;
+}
+.reservation-form .form-row .input-wrapper .phone-country-select .dropdown-custom-btn {
+  border-right: 1px solid rgba(21, 21, 21, 0.16);
+  padding: 10px 12px;
+}
+.reservation-form .form-row .input-wrapper .phone-country-select .dropdown-custom-text {
+  white-space: nowrap;
+}
+.reservation-form .form-row .input-wrapper .phone-country-select .dropdown-custom-menu {
+  width: max-content;
+  min-width: 220px;
+  max-height: 240px;
+  overflow-y: auto;
+}
 .reservation-form .form-note {
   display: flex;
   flex-direction: column;

@@ -140,7 +140,8 @@ function customDropdown() {
 
         if (isSelectType) {
           // Logic cho dropdown-custom-select
-          const optionText = item.textContent;
+          const optionText =
+            thisItem.attr("data-display") || item.textContent.trim();
           displayText.textContent = optionText;
 
           if (thisItem.attr("data-value")) {
@@ -148,6 +149,19 @@ function customDropdown() {
 
             // Sửa: gắn data-value vào dropdown, không gắn vào span
             dropdown.setAttribute("data-value", thisItem.attr("data-value"));
+          }
+
+          if (dropdown.classList.contains("phone-country-select")) {
+            const dialCode = thisItem.attr("data-dial-code") || "";
+            const phoneCountryInput = dropdown.parentElement.querySelector(
+              "input[name='phone_country_code']"
+            );
+
+            dropdown.setAttribute("data-dial-code", dialCode);
+
+            if (phoneCountryInput) {
+              phoneCountryInput.value = dialCode;
+            }
           }
 
           dropdown.classList.add("selected");
@@ -418,6 +432,9 @@ function formReservation() {
     // --- Inputs ---
     const $inputName = $form.find("input[name='fullname']");
     const $inputPhone = $form.find("input[name='phone']");
+    const $inputPhoneCountryCode = $form.find(
+      "input[name='phone_country_code']"
+    );
     const $inputEmail = $form.find("input[name='email']");
     const $inputGuest = $form.find("input[name='guest']");
     const $inputDate = $form.find("input[name='date']");
@@ -466,16 +483,37 @@ function formReservation() {
       return true;
     }
 
-    if (!validateSelect(".input-wrapper.time")) isValid = false;
+    // if (!validateSelect(".input-wrapper.time")) isValid = false;
     if (!validateSelect(".input-wrapper.select-event")) isValid = false;
 
     if (!isValid) return;
+
+    function formatPhoneNumber(phone, dialCode) {
+      const trimmedPhone = phone.trim();
+      const trimmedDialCode = dialCode.trim();
+
+      if (!trimmedPhone || trimmedPhone.startsWith("+")) return trimmedPhone;
+      if (!trimmedDialCode) return trimmedPhone;
+
+      const normalizedPhone = trimmedPhone.replace(/[\s()-]/g, "");
+      return `${trimmedDialCode}${normalizedPhone.replace(/^0+/, "")}`;
+    }
+
+    const phoneCountryCode =
+      $inputPhoneCountryCode.val() ||
+      $form.find(".phone-country-select").attr("data-dial-code") ||
+      "+84";
+    const formattedPhone = formatPhoneNumber(
+      $inputPhone.val(),
+      phoneCountryCode
+    );
 
     // --- Prepare FormData ---
     const formData = new FormData();
     formData.append("action", "submit_reservation_form");
     formData.append("name", $inputName.val().trim());
-    formData.append("phone", $inputPhone.val().trim());
+    formData.append("phone", formattedPhone);
+    formData.append("phone_country_code", phoneCountryCode.trim());
     formData.append("email", $inputEmail.val().trim());
     formData.append("guest", $inputGuest.val().trim());
     formData.append("date", $inputDate.val().trim());

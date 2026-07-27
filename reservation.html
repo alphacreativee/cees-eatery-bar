@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -219,19 +219,468 @@
                     >
                     <input type="email" name="email" autocomplete="off" />
                   </div>
-                  <div class="input-wrapper">
+                  <div class="input-wrapper phone-field">
                     <label
                       for="phone"
                       class="btn-2-font text-uppercase color-white"
                       >Phone number*</label
                     >
-                    <input
-                      type="tel"
-                      name="phone"
-                      autocomplete="off"
-                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                      required
-                    />
+                    <div class="phone-input-group">
+                      <div class="dropdown-custom-select phone-country-select">
+                        <div class="dropdown-custom-btn">
+                          <div class="dropdown-custom-text">🇻🇳 +84</div>
+                          <div class="ic">
+                            <svg
+                              width="9"
+                              height="5"
+                              viewBox="0 0 9 5"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0.707031 0.707031L4.20703 4.20703L7.70703 0.707031"
+                                stroke="#151515"
+                                stroke-linecap="square"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="dropdown-custom-menu" data-lenis-prevent>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+84"
+                            data-display="🇻🇳 +84"
+                          >
+                            🇻🇳 Vietnam (+84)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+66"
+                            data-display="🇹🇭 +66"
+                          >
+                            🇹🇭 Thailand (+66)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+855"
+                            data-display="🇰🇭 +855"
+                          >
+                            🇰🇭 Cambodia (+855)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+856"
+                            data-display="🇱🇦 +856"
+                          >
+                            🇱🇦 Laos (+856)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+95"
+                            data-display="🇲🇲 +95"
+                          >
+                            🇲🇲 Myanmar (+95)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+60"
+                            data-display="🇲🇾 +60"
+                          >
+                            🇲🇾 Malaysia (+60)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+65"
+                            data-display="🇸🇬 +65"
+                          >
+                            🇸🇬 Singapore (+65)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+62"
+                            data-display="🇮🇩 +62"
+                          >
+                            🇮🇩 Indonesia (+62)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+63"
+                            data-display="🇵🇭 +63"
+                          >
+                            🇵🇭 Philippines (+63)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+673"
+                            data-display="🇧🇳 +673"
+                          >
+                            🇧🇳 Brunei (+673)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+670"
+                            data-display="🇹🇱 +670"
+                          >
+                            🇹🇱 Timor-Leste (+670)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+86"
+                            data-display="🇨🇳 +86"
+                          >
+                            🇨🇳 China (+86)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+852"
+                            data-display="🇭🇰 +852"
+                          >
+                            🇭🇰 Hong Kong (+852)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+853"
+                            data-display="🇲🇴 +853"
+                          >
+                            🇲🇴 Macau (+853)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+886"
+                            data-display="🇹🇼 +886"
+                          >
+                            🇹🇼 Taiwan (+886)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+81"
+                            data-display="🇯🇵 +81"
+                          >
+                            🇯🇵 Japan (+81)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+82"
+                            data-display="🇰🇷 +82"
+                          >
+                            🇰🇷 South Korea (+82)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+91"
+                            data-display="🇮🇳 +91"
+                          >
+                            🇮🇳 India (+91)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+880"
+                            data-display="🇧🇩 +880"
+                          >
+                            🇧🇩 Bangladesh (+880)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+94"
+                            data-display="🇱🇰 +94"
+                          >
+                            🇱🇰 Sri Lanka (+94)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+977"
+                            data-display="🇳🇵 +977"
+                          >
+                            🇳🇵 Nepal (+977)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+960"
+                            data-display="🇲🇻 +960"
+                          >
+                            🇲🇻 Maldives (+960)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+971"
+                            data-display="🇦🇪 +971"
+                          >
+                            🇦🇪 United Arab Emirates (+971)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+974"
+                            data-display="🇶🇦 +974"
+                          >
+                            🇶🇦 Qatar (+974)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+966"
+                            data-display="🇸🇦 +966"
+                          >
+                            🇸🇦 Saudi Arabia (+966)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+90"
+                            data-display="🇹🇷 +90"
+                          >
+                            🇹🇷 Turkey (+90)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+1"
+                            data-display="🇺🇸 +1"
+                          >
+                            🇺🇸 United States (+1)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+1"
+                            data-display="🇨🇦 +1"
+                          >
+                            🇨🇦 Canada (+1)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+52"
+                            data-display="🇲🇽 +52"
+                          >
+                            🇲🇽 Mexico (+52)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+55"
+                            data-display="🇧🇷 +55"
+                          >
+                            🇧🇷 Brazil (+55)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+54"
+                            data-display="🇦🇷 +54"
+                          >
+                            🇦🇷 Argentina (+54)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+56"
+                            data-display="🇨🇱 +56"
+                          >
+                            🇨🇱 Chile (+56)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+57"
+                            data-display="🇨🇴 +57"
+                          >
+                            🇨🇴 Colombia (+57)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+44"
+                            data-display="🇬🇧 +44"
+                          >
+                            🇬🇧 United Kingdom (+44)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+353"
+                            data-display="🇮🇪 +353"
+                          >
+                            🇮🇪 Ireland (+353)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+33"
+                            data-display="🇫🇷 +33"
+                          >
+                            🇫🇷 France (+33)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+49"
+                            data-display="🇩🇪 +49"
+                          >
+                            🇩🇪 Germany (+49)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+39"
+                            data-display="🇮🇹 +39"
+                          >
+                            🇮🇹 Italy (+39)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+34"
+                            data-display="🇪🇸 +34"
+                          >
+                            🇪🇸 Spain (+34)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+351"
+                            data-display="🇵🇹 +351"
+                          >
+                            🇵🇹 Portugal (+351)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+31"
+                            data-display="🇳🇱 +31"
+                          >
+                            🇳🇱 Netherlands (+31)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+32"
+                            data-display="🇧🇪 +32"
+                          >
+                            🇧🇪 Belgium (+32)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+41"
+                            data-display="🇨🇭 +41"
+                          >
+                            🇨🇭 Switzerland (+41)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+43"
+                            data-display="🇦🇹 +43"
+                          >
+                            🇦🇹 Austria (+43)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+45"
+                            data-display="🇩🇰 +45"
+                          >
+                            🇩🇰 Denmark (+45)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+46"
+                            data-display="🇸🇪 +46"
+                          >
+                            🇸🇪 Sweden (+46)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+47"
+                            data-display="🇳🇴 +47"
+                          >
+                            🇳🇴 Norway (+47)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+358"
+                            data-display="🇫🇮 +358"
+                          >
+                            🇫🇮 Finland (+358)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+48"
+                            data-display="🇵🇱 +48"
+                          >
+                            🇵🇱 Poland (+48)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+420"
+                            data-display="🇨🇿 +420"
+                          >
+                            🇨🇿 Czech Republic (+420)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+36"
+                            data-display="🇭🇺 +36"
+                          >
+                            🇭🇺 Hungary (+36)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+30"
+                            data-display="🇬🇷 +30"
+                          >
+                            🇬🇷 Greece (+30)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+7"
+                            data-display="🇷🇺 +7"
+                          >
+                            🇷🇺 Russia (+7)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+61"
+                            data-display="🇦🇺 +61"
+                          >
+                            🇦🇺 Australia (+61)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+64"
+                            data-display="🇳🇿 +64"
+                          >
+                            🇳🇿 New Zealand (+64)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+27"
+                            data-display="🇿🇦 +27"
+                          >
+                            🇿🇦 South Africa (+27)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+20"
+                            data-display="🇪🇬 +20"
+                          >
+                            🇪🇬 Egypt (+20)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+212"
+                            data-display="🇲🇦 +212"
+                          >
+                            🇲🇦 Morocco (+212)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+234"
+                            data-display="🇳🇬 +234"
+                          >
+                            🇳🇬 Nigeria (+234)
+                          </div>
+                          <div
+                            class="dropdown-custom-item link-hover color-white"
+                            data-dial-code="+254"
+                            data-display="🇰🇪 +254"
+                          >
+                            🇰🇪 Kenya (+254)
+                          </div>
+                        </div>
+                      </div>
+                      <input
+                        type="hidden"
+                        name="phone_country_code"
+                        value="+84"
+                      />
+                      <input
+                        type="tel"
+                        name="phone"
+                        autocomplete="off"
+                        inputmode="tel"
+                        required
+                      />
+                    </div>
                   </div>
                   <div class="input-wrapper">
                     <label
@@ -285,7 +734,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="input-wrapper w-grid">
+                  <div class="input-wrapper w-grid select-event">
                     <label
                       for="time"
                       class="btn-2-font text-uppercase color-white"
